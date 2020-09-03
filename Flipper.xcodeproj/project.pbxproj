@@ -7,48 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF2F05452501528C006B44CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F05442501528C006B44CC /* AppDelegate.swift */; };
-		BF2F05472501528C006B44CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F05462501528C006B44CC /* SceneDelegate.swift */; };
-		BF2F05492501528C006B44CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F05482501528C006B44CC /* ContentView.swift */; };
-		BF2F054B2501528D006B44CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2F054A2501528D006B44CC /* Assets.xcassets */; };
-		BF2F054E2501528D006B44CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2F054D2501528D006B44CC /* Preview Assets.xcassets */; };
-		BF2F05512501528D006B44CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2F054F2501528D006B44CC /* LaunchScreen.storyboard */; };
-		BF2F055C2501528D006B44CC /* FlipperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F055B2501528D006B44CC /* FlipperTests.swift */; };
+		BF2F05732501547A006B44CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F05722501547A006B44CC /* AppDelegate.swift */; };
+		BF2F05752501547A006B44CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F05742501547A006B44CC /* SceneDelegate.swift */; };
+		BF2F05772501547A006B44CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F05762501547A006B44CC /* ViewController.swift */; };
+		BF2F057A2501547A006B44CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2F05782501547A006B44CC /* Main.storyboard */; };
+		BF2F057C2501547B006B44CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2F057B2501547B006B44CC /* Assets.xcassets */; };
+		BF2F057F2501547B006B44CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2F057D2501547B006B44CC /* LaunchScreen.storyboard */; };
+		BF2F058A2501547B006B44CC /* FlipperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F05892501547B006B44CC /* FlipperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BF2F05582501528D006B44CC /* PBXContainerItemProxy */ = {
+		BF2F05862501547B006B44CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BF2F05392501528C006B44CC /* Project object */;
+			containerPortal = BF2F05672501547A006B44CC /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BF2F05402501528C006B44CC;
+			remoteGlobalIDString = BF2F056E2501547A006B44CC;
 			remoteInfo = Flipper;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BF2F05412501528C006B44CC /* Flipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flipper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF2F05442501528C006B44CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF2F05462501528C006B44CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BF2F05482501528C006B44CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		BF2F054A2501528D006B44CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BF2F054D2501528D006B44CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		BF2F05502501528D006B44CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BF2F05522501528D006B44CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF2F05572501528D006B44CC /* FlipperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlipperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF2F055B2501528D006B44CC /* FlipperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipperTests.swift; sourceTree = "<group>"; };
-		BF2F055D2501528D006B44CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF2F056F2501547A006B44CC /* Flipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flipper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF2F05722501547A006B44CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF2F05742501547A006B44CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BF2F05762501547A006B44CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF2F05792501547A006B44CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF2F057B2501547B006B44CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF2F057E2501547B006B44CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF2F05802501547B006B44CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF2F05852501547B006B44CC /* FlipperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlipperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF2F05892501547B006B44CC /* FlipperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipperTests.swift; sourceTree = "<group>"; };
+		BF2F058B2501547B006B44CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BF2F053E2501528C006B44CC /* Frameworks */ = {
+		BF2F056C2501547A006B44CC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF2F05542501528D006B44CC /* Frameworks */ = {
+		BF2F05822501547B006B44CC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,51 +58,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BF2F05382501528C006B44CC = {
+		BF2F05662501547A006B44CC = {
 			isa = PBXGroup;
 			children = (
-				BF2F05432501528C006B44CC /* Flipper */,
-				BF2F055A2501528D006B44CC /* FlipperTests */,
-				BF2F05422501528C006B44CC /* Products */,
+				BF2F05712501547A006B44CC /* Flipper */,
+				BF2F05882501547B006B44CC /* FlipperTests */,
+				BF2F05702501547A006B44CC /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BF2F05422501528C006B44CC /* Products */ = {
+		BF2F05702501547A006B44CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF2F05412501528C006B44CC /* Flipper.app */,
-				BF2F05572501528D006B44CC /* FlipperTests.xctest */,
+				BF2F056F2501547A006B44CC /* Flipper.app */,
+				BF2F05852501547B006B44CC /* FlipperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BF2F05432501528C006B44CC /* Flipper */ = {
+		BF2F05712501547A006B44CC /* Flipper */ = {
 			isa = PBXGroup;
 			children = (
-				BF2F05442501528C006B44CC /* AppDelegate.swift */,
-				BF2F05462501528C006B44CC /* SceneDelegate.swift */,
-				BF2F05482501528C006B44CC /* ContentView.swift */,
-				BF2F054A2501528D006B44CC /* Assets.xcassets */,
-				BF2F054F2501528D006B44CC /* LaunchScreen.storyboard */,
-				BF2F05522501528D006B44CC /* Info.plist */,
-				BF2F054C2501528D006B44CC /* Preview Content */,
+				BF2F05722501547A006B44CC /* AppDelegate.swift */,
+				BF2F05742501547A006B44CC /* SceneDelegate.swift */,
+				BF2F05762501547A006B44CC /* ViewController.swift */,
+				BF2F05782501547A006B44CC /* Main.storyboard */,
+				BF2F057B2501547B006B44CC /* Assets.xcassets */,
+				BF2F057D2501547B006B44CC /* LaunchScreen.storyboard */,
+				BF2F05802501547B006B44CC /* Info.plist */,
 			);
 			path = Flipper;
 			sourceTree = "<group>";
 		};
-		BF2F054C2501528D006B44CC /* Preview Content */ = {
+		BF2F05882501547B006B44CC /* FlipperTests */ = {
 			isa = PBXGroup;
 			children = (
-				BF2F054D2501528D006B44CC /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		BF2F055A2501528D006B44CC /* FlipperTests */ = {
-			isa = PBXGroup;
-			children = (
-				BF2F055B2501528D006B44CC /* FlipperTests.swift */,
-				BF2F055D2501528D006B44CC /* Info.plist */,
+				BF2F05892501547B006B44CC /* FlipperTests.swift */,
+				BF2F058B2501547B006B44CC /* Info.plist */,
 			);
 			path = FlipperTests;
 			sourceTree = "<group>";
@@ -110,13 +102,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BF2F05402501528C006B44CC /* Flipper */ = {
+		BF2F056E2501547A006B44CC /* Flipper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF2F05602501528D006B44CC /* Build configuration list for PBXNativeTarget "Flipper" */;
+			buildConfigurationList = BF2F058E2501547B006B44CC /* Build configuration list for PBXNativeTarget "Flipper" */;
 			buildPhases = (
-				BF2F053D2501528C006B44CC /* Sources */,
-				BF2F053E2501528C006B44CC /* Frameworks */,
-				BF2F053F2501528C006B44CC /* Resources */,
+				BF2F056B2501547A006B44CC /* Sources */,
+				BF2F056C2501547A006B44CC /* Frameworks */,
+				BF2F056D2501547A006B44CC /* Resources */,
 			);
 			buildRules = (
 			);
@@ -124,47 +116,47 @@
 			);
 			name = Flipper;
 			productName = Flipper;
-			productReference = BF2F05412501528C006B44CC /* Flipper.app */;
+			productReference = BF2F056F2501547A006B44CC /* Flipper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BF2F05562501528D006B44CC /* FlipperTests */ = {
+		BF2F05842501547B006B44CC /* FlipperTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF2F05632501528D006B44CC /* Build configuration list for PBXNativeTarget "FlipperTests" */;
+			buildConfigurationList = BF2F05912501547B006B44CC /* Build configuration list for PBXNativeTarget "FlipperTests" */;
 			buildPhases = (
-				BF2F05532501528D006B44CC /* Sources */,
-				BF2F05542501528D006B44CC /* Frameworks */,
-				BF2F05552501528D006B44CC /* Resources */,
+				BF2F05812501547B006B44CC /* Sources */,
+				BF2F05822501547B006B44CC /* Frameworks */,
+				BF2F05832501547B006B44CC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BF2F05592501528D006B44CC /* PBXTargetDependency */,
+				BF2F05872501547B006B44CC /* PBXTargetDependency */,
 			);
 			name = FlipperTests;
 			productName = FlipperTests;
-			productReference = BF2F05572501528D006B44CC /* FlipperTests.xctest */;
+			productReference = BF2F05852501547B006B44CC /* FlipperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BF2F05392501528C006B44CC /* Project object */ = {
+		BF2F05672501547A006B44CC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Stephen Walsh";
 				TargetAttributes = {
-					BF2F05402501528C006B44CC = {
+					BF2F056E2501547A006B44CC = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
-					BF2F05562501528D006B44CC = {
+					BF2F05842501547B006B44CC = {
 						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = BF2F05402501528C006B44CC;
+						TestTargetID = BF2F056E2501547A006B44CC;
 					};
 				};
 			};
-			buildConfigurationList = BF2F053C2501528C006B44CC /* Build configuration list for PBXProject "Flipper" */;
+			buildConfigurationList = BF2F056A2501547A006B44CC /* Build configuration list for PBXProject "Flipper" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -172,29 +164,29 @@
 				en,
 				Base,
 			);
-			mainGroup = BF2F05382501528C006B44CC;
-			productRefGroup = BF2F05422501528C006B44CC /* Products */;
+			mainGroup = BF2F05662501547A006B44CC;
+			productRefGroup = BF2F05702501547A006B44CC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BF2F05402501528C006B44CC /* Flipper */,
-				BF2F05562501528D006B44CC /* FlipperTests */,
+				BF2F056E2501547A006B44CC /* Flipper */,
+				BF2F05842501547B006B44CC /* FlipperTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BF2F053F2501528C006B44CC /* Resources */ = {
+		BF2F056D2501547A006B44CC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2F05512501528D006B44CC /* LaunchScreen.storyboard in Resources */,
-				BF2F054E2501528D006B44CC /* Preview Assets.xcassets in Resources */,
-				BF2F054B2501528D006B44CC /* Assets.xcassets in Resources */,
+				BF2F057F2501547B006B44CC /* LaunchScreen.storyboard in Resources */,
+				BF2F057C2501547B006B44CC /* Assets.xcassets in Resources */,
+				BF2F057A2501547A006B44CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF2F05552501528D006B44CC /* Resources */ = {
+		BF2F05832501547B006B44CC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -204,39 +196,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BF2F053D2501528C006B44CC /* Sources */ = {
+		BF2F056B2501547A006B44CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2F05452501528C006B44CC /* AppDelegate.swift in Sources */,
-				BF2F05472501528C006B44CC /* SceneDelegate.swift in Sources */,
-				BF2F05492501528C006B44CC /* ContentView.swift in Sources */,
+				BF2F05772501547A006B44CC /* ViewController.swift in Sources */,
+				BF2F05732501547A006B44CC /* AppDelegate.swift in Sources */,
+				BF2F05752501547A006B44CC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF2F05532501528D006B44CC /* Sources */ = {
+		BF2F05812501547B006B44CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2F055C2501528D006B44CC /* FlipperTests.swift in Sources */,
+				BF2F058A2501547B006B44CC /* FlipperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BF2F05592501528D006B44CC /* PBXTargetDependency */ = {
+		BF2F05872501547B006B44CC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BF2F05402501528C006B44CC /* Flipper */;
-			targetProxy = BF2F05582501528D006B44CC /* PBXContainerItemProxy */;
+			target = BF2F056E2501547A006B44CC /* Flipper */;
+			targetProxy = BF2F05862501547B006B44CC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BF2F054F2501528D006B44CC /* LaunchScreen.storyboard */ = {
+		BF2F05782501547A006B44CC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BF2F05502501528D006B44CC /* Base */,
+				BF2F05792501547A006B44CC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF2F057D2501547B006B44CC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF2F057E2501547B006B44CC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -244,7 +244,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BF2F055E2501528D006B44CC /* Debug */ = {
+		BF2F058C2501547B006B44CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -304,7 +304,7 @@
 			};
 			name = Debug;
 		};
-		BF2F055F2501528D006B44CC /* Release */ = {
+		BF2F058D2501547B006B44CC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -358,14 +358,12 @@
 			};
 			name = Release;
 		};
-		BF2F05612501528D006B44CC /* Debug */ = {
+		BF2F058F2501547B006B44CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Flipper/Preview Content\"";
 				DEVELOPMENT_TEAM = 29XC7B4KB4;
-				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Flipper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -378,14 +376,12 @@
 			};
 			name = Debug;
 		};
-		BF2F05622501528D006B44CC /* Release */ = {
+		BF2F05902501547B006B44CC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Flipper/Preview Content\"";
 				DEVELOPMENT_TEAM = 29XC7B4KB4;
-				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Flipper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -398,7 +394,7 @@
 			};
 			name = Release;
 		};
-		BF2F05642501528D006B44CC /* Debug */ = {
+		BF2F05922501547B006B44CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -420,7 +416,7 @@
 			};
 			name = Debug;
 		};
-		BF2F05652501528D006B44CC /* Release */ = {
+		BF2F05932501547B006B44CC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -445,34 +441,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BF2F053C2501528C006B44CC /* Build configuration list for PBXProject "Flipper" */ = {
+		BF2F056A2501547A006B44CC /* Build configuration list for PBXProject "Flipper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF2F055E2501528D006B44CC /* Debug */,
-				BF2F055F2501528D006B44CC /* Release */,
+				BF2F058C2501547B006B44CC /* Debug */,
+				BF2F058D2501547B006B44CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF2F05602501528D006B44CC /* Build configuration list for PBXNativeTarget "Flipper" */ = {
+		BF2F058E2501547B006B44CC /* Build configuration list for PBXNativeTarget "Flipper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF2F05612501528D006B44CC /* Debug */,
-				BF2F05622501528D006B44CC /* Release */,
+				BF2F058F2501547B006B44CC /* Debug */,
+				BF2F05902501547B006B44CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF2F05632501528D006B44CC /* Build configuration list for PBXNativeTarget "FlipperTests" */ = {
+		BF2F05912501547B006B44CC /* Build configuration list for PBXNativeTarget "FlipperTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF2F05642501528D006B44CC /* Debug */,
-				BF2F05652501528D006B44CC /* Release */,
+				BF2F05922501547B006B44CC /* Debug */,
+				BF2F05932501547B006B44CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BF2F05392501528C006B44CC /* Project object */;
+	rootObject = BF2F05672501547A006B44CC /* Project object */;
 }
