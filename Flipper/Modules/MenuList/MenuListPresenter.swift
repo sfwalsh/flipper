@@ -13,6 +13,7 @@ final class MenuListPresenter {
     private unowned var view: MenuListViewRepresentable?
     private let interactor: MenuListInteractorRepresentable
     private let router: MenuListRouter
+    private var menu: Menu?
     
     init(interactor: MenuListInteractorRepresentable, router: MenuListRouter) {
         self.interactor = interactor
@@ -44,6 +45,32 @@ extension MenuListPresenter: MenuListPresenterRepresentable {
     func viewDidDisappear(animated: Bool) { }
 }
 
+
+// MARK: Datasource Operator Implementation
+
+extension MenuListPresenter {
+    
+    func numberOfSections() -> Int {
+        return 0
+    }
+    
+    func numberOfItems(inSection section: Int) -> Int {
+        return 0
+    }
+    
+    func item(atIndexPath indexPath: IndexPath) -> Menu? {
+        return menu
+    }
+    
+    func didSelectItem(atIndexPath indexPath: IndexPath) {
+        
+    }
+    
+    func sectionTitle(forSection section: Int) -> String? {
+        return ""
+    }
+}
+
 // MARK: Private helpers
 
 extension MenuListPresenter {
@@ -57,12 +84,13 @@ extension MenuListPresenter {
         view?.showActivityIndicator()
         interactor.fetchMenu(completion: { result in
             DispatchQueue.main.async { [weak self] in
-//                self?.view?.hideActivityIndicator()
+                self?.view?.hideActivityIndicator()
                 switch result {
                 case .failure(let err):
                     self?.handleError(error: err)
                 case .success(let menu):
-                    break
+                    self?.menu = menu
+                    self?.view?.reload()
                 }
             }
         })

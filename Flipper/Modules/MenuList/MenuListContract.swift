@@ -10,13 +10,27 @@ import Foundation
 
 protocol MenuListViewRepresentable: class {
     func applyTitle(title: String)
-    func setupSubviews() 
+    func setupSubviews()
+    func reload()
     func showActivityIndicator()
     func hideActivityIndicator()
 }
 
 protocol MenuListPresenterRepresentable: PresenterRepresentable {
     func attachView(view: MenuListViewRepresentable & Navigatable)
+    
+    
+    // MARK: Datasource Operators
+    func numberOfSections() -> Int
+    func numberOfItems(inSection section: Int) -> Int
+    
+    func item(atIndexPath indexPath: IndexPath) -> Menu?
+    func didSelectItem(atIndexPath indexPath: IndexPath)
+    func sectionTitle(forSection section: Int) -> String?
+}
+extension MenuListPresenterRepresentable {
+    
+
 }
 
 protocol MenuListInteractorRepresentable {

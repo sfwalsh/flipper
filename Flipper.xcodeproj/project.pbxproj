@@ -12,6 +12,7 @@
 		BF06A041250199D100365BC2 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF06A040250199D100365BC2 /* ViewRouter.swift */; };
 		BF06A043250199E800365BC2 /* MenuListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF06A042250199E800365BC2 /* MenuListRouter.swift */; };
 		BF06A04525019DA400365BC2 /* SystemExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF06A04425019DA400365BC2 /* SystemExtensions.swift */; };
+		BF06A0492501A5A600365BC2 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF06A0482501A5A600365BC2 /* ReusableCell.swift */; };
 		BF0D568C250155E1007CBE41 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D568B250155E1007CBE41 /* MenuListView.swift */; };
 		BF0D568F250155F8007CBE41 /* MenuListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D568E250155F8007CBE41 /* MenuListPresenter.swift */; };
 		BF0D569125015601007CBE41 /* MenuListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D569025015601007CBE41 /* MenuListInteractor.swift */; };
@@ -51,6 +52,7 @@
 		BF06A040250199D100365BC2 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		BF06A042250199E800365BC2 /* MenuListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListRouter.swift; sourceTree = "<group>"; };
 		BF06A04425019DA400365BC2 /* SystemExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemExtensions.swift; sourceTree = "<group>"; };
+		BF06A0482501A5A600365BC2 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		BF0D568B250155E1007CBE41 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 		BF0D568E250155F8007CBE41 /* MenuListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListPresenter.swift; sourceTree = "<group>"; };
 		BF0D569025015601007CBE41 /* MenuListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListInteractor.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				BF06A040250199D100365BC2 /* ViewRouter.swift */,
 				BF0D56C325016397007CBE41 /* PresenterRepresentable.swift */,
 				BF06A03E2501991C00365BC2 /* Navigatable.swift */,
+				BF06A0482501A5A600365BC2 /* ReusableCell.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				BF0D56C425016397007CBE41 /* PresenterRepresentable.swift in Sources */,
 				BF0D568F250155F8007CBE41 /* MenuListPresenter.swift in Sources */,
 				BF06A03F2501991C00365BC2 /* Navigatable.swift in Sources */,
+				BF06A0492501A5A600365BC2 /* ReusableCell.swift in Sources */,
 				BF0D569325015621007CBE41 /* MenuListContract.swift in Sources */,
 				BF2F05752501547A006B44CC /* SceneDelegate.swift in Sources */,
 				BF0D56CB250167BD007CBE41 /* MenuItemOptionSet.swift in Sources */,
