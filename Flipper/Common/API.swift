@@ -18,7 +18,7 @@ enum API {
         case GET, PUT, UPDATE, DELETE
     }
     
-    private static let host: String = "https://menus.flipdish.co"
+    private static let host: String = "menus.flipdish.co"
     
     static func fetchMenuRequest() -> URLRequest? {
         var components = URLComponents()

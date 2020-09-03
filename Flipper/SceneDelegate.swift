@@ -68,7 +68,8 @@ private extension SceneDelegate {
         // Initial view could be switched out here based on login state, etc.
         
         let interactor = MenuListInteractor()
-        let presenter = MenuListPresenter(interactor: interactor)
+        let router = MenuListRouter()
+        let presenter = MenuListPresenter(interactor: interactor, router: router)
         let view = MenuListView(presenter: presenter)
         let navigationController = UINavigationController(rootViewController: view)
         

@@ -9,11 +9,14 @@
 import Foundation
 
 protocol MenuListViewRepresentable: class {
-    
+    func applyTitle(title: String)
+    func setupSubviews() 
+    func showActivityIndicator()
+    func hideActivityIndicator()
 }
 
 protocol MenuListPresenterRepresentable: PresenterRepresentable {
-    func attachView(view: MenuListViewRepresentable)
+    func attachView(view: MenuListViewRepresentable & Navigatable)
 }
 
 protocol MenuListInteractorRepresentable {
