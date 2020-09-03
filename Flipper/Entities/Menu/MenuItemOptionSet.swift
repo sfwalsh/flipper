@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MenuItemOptionSet {
+struct MenuItemOptionSet: Decodable {
     let id: Int
     /*
          When IsMasterOptionSet is set to true on a MenuItemOptionSet, the price of the
@@ -16,8 +16,23 @@ struct MenuItemOptionSet {
          MenuItemOptionSet, and the price set on the MenuSectionItem is ignored.
      */
     let isMasterOptionSet: Bool
-    
+    let items: [MenuItemOptionSetItem]
     let name: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case id = "MenuItemOptionSetId"
+        case isMasterOptionSet = "IsMasterOptionSet"
+        case items = "MenuItemOptionSetItems"
+        case name = "Name"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try values.decode(Int.self, forKey: .id)
+        self.name = try values.decodeIfPresent(String.self, forKey: .name)
+        self.isMasterOptionSet = try values.decode(Bool.self, forKey: .isMasterOptionSet)
+        self.items = try values.decodeIfPresent([MenuItemOptionSetItem].self, forKey: .items) ?? []
+    }
 }
 
 /*

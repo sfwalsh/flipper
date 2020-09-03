@@ -17,5 +17,5 @@ protocol MenuListPresenterRepresentable: PresenterRepresentable {
 }
 
 protocol MenuListInteractorRepresentable {
-    
+    func fetchMenu(completion: @escaping ((NetworkResult<Menu, MenuFetchError>) -> Void))
 }

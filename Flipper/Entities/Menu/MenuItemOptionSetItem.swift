@@ -8,11 +8,26 @@
 
 import Foundation
 
-struct MenuItemOptionSetItem {
+struct MenuItemOptionSetItem: Decodable {
     let id: Int
     let name: String
     let price: Double?
     let imageUrl: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case id = "MenuItemOptionSetItemId"
+        case name = "Name"
+        case price = "Price"
+        case imageUrl = "ImageUrl"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try values.decode(Int.self, forKey: .id)
+        self.name = try values.decode(String.self, forKey: .name)
+        self.price = try values.decodeIfPresent(Double.self, forKey: .price)
+        self.imageUrl = try values.decodeIfPresent(String.self, forKey: .imageUrl)
+    }
 }
 
 /*

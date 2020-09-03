@@ -28,7 +28,14 @@ extension MenuListPresenter: MenuListPresenterRepresentable {
     }
     
     func viewDidLoad() {
-        
+        interactor.fetchMenu(completion: { [weak self] result in
+            switch result {
+            case .failure(let err):
+                break
+            case .success(let menu):
+                break
+            }
+        })
     }
     
     func viewWillAppear(animated: Bool) { }

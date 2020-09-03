@@ -8,9 +8,21 @@
 
 import Foundation
 
-struct Menu {
+struct Menu: Decodable {
+    
     let id: Int
     let sections: [MenuSection]
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "MenuId"
+        case sections = "MenuSections"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try values.decode(Int.self, forKey: .id)
+        self.sections = try values.decode([MenuSection].self, forKey: .sections)
+    }
 }
 
 /*
