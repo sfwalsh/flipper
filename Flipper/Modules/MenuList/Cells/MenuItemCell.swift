@@ -66,6 +66,11 @@ final class MenuItemCell: UICollectionViewCell, ReusableCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+    }
 }
 
 
@@ -124,11 +129,6 @@ extension MenuItemCell {
                                                        constant: -offsetRightConstraintConstant(constant: Layout.contentInsets.right))
         ])
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        imageView.image = nil
-    }
 }
 
 
@@ -140,6 +140,12 @@ extension MenuItemCell {
         priceLabel.update(withTitle: viewModel.priceLabelText)
         titleLabel.text = viewModel.titleLabelText
         descriptionLabel.text = viewModel.descriptionLabelText
+        
+        if let imageURLString = viewModel.mainImageURLString {
+            imageView.loadImage(forURL: imageURLString)
+        } else {
+            imageView.image = nil
+        }
     }
 }
 

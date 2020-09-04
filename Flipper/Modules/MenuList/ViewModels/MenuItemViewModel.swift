@@ -12,6 +12,10 @@ struct MenuItemViewModel {
     
     private let menuSectionItem: MenuSectionItem
     
+    var mainImageURLString: String? {
+        return menuSectionItem.imageUrl
+    }
+    
     var titleLabelText: String {
         return menuSectionItem.name
     }
