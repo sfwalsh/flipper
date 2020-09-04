@@ -14,3 +14,6 @@
 "MENU_FETCH_ERROR_REQUEST_ERROR" = "Couldn't fetch menu, please try again later.";
 "MENU_FETCH_ERROR_UNEXPECTED_RESPONSE" = "Request succeeded but received an unexpected response from the server.";
 "MENU_FETCH_ERROR_GENERIC" = "Uh oh! Something went wrong when trying to talk to the server. Try again later.";
+
+"NO_PRICE" = "No Price";
+"FROM_PRICE_PREFIX" = "From ";

@@ -12,4 +12,5 @@ struct FontMachine {
     static let header = UIFont.systemFont(ofSize: 20, weight: .semibold)
     static let title = UIFont.systemFont(ofSize: 17, weight: .semibold)
     static let paragraph = UIFont.systemFont(ofSize: 15, weight: .regular)
+    static let attribute = UIFont.systemFont(ofSize: 15, weight: .semibold)
 }

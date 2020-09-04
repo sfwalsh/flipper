@@ -12,6 +12,18 @@ struct MenuItemViewModel {
     
     private let menuSectionItem: MenuSectionItem
     
+    var titleLabelText: String {
+        return menuSectionItem.name
+    }
+    
+    var descriptionLabelText: String? {
+        return menuSectionItem.description
+    }
+    
+    var priceLabelText: String {
+        return PriceFormatter.format(value: menuSectionItem.price, isMinPrice: false)
+    }
+    
     init(withMenuItem menuItem: MenuSectionItem) {
         self.menuSectionItem = menuItem
     }

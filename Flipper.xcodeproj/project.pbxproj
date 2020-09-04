@@ -35,6 +35,8 @@
 		BF2F057F2501547B006B44CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2F057D2501547B006B44CC /* LaunchScreen.storyboard */; };
 		BF2F058A2501547B006B44CC /* MenuPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F05892501547B006B44CC /* MenuPresenterTests.swift */; };
 		BF9A843B25027EDE005A748D /* SectionFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A843A25027EDE005A748D /* SectionFooterCell.swift */; };
+		BF9A843D250281C7005A748D /* AttributeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A843C250281C7005A748D /* AttributeLabel.swift */; };
+		BF9A843F25028EBE005A748D /* PriceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A843E25028EBE005A748D /* PriceFormatter.swift */; };
 		BFCD09D22502549800715CEE /* MockMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09D12502549800715CEE /* MockMenuView.swift */; };
 		BFCD09D4250254A500715CEE /* MockMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09D3250254A500715CEE /* MockMenuRouter.swift */; };
 		BFCD09D6250254B200715CEE /* MockMenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09D5250254B200715CEE /* MockMenuInteractor.swift */; };
@@ -91,6 +93,8 @@
 		BF2F05892501547B006B44CC /* MenuPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenterTests.swift; sourceTree = "<group>"; };
 		BF2F058B2501547B006B44CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF9A843A25027EDE005A748D /* SectionFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionFooterCell.swift; sourceTree = "<group>"; };
+		BF9A843C250281C7005A748D /* AttributeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeLabel.swift; sourceTree = "<group>"; };
+		BF9A843E25028EBE005A748D /* PriceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFormatter.swift; sourceTree = "<group>"; };
 		BFCD09D12502549800715CEE /* MockMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMenuView.swift; sourceTree = "<group>"; };
 		BFCD09D3250254A500715CEE /* MockMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMenuRouter.swift; sourceTree = "<group>"; };
 		BFCD09D5250254B200715CEE /* MockMenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMenuInteractor.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 				BF0D56CE2501685A007CBE41 /* Entities */,
 				BF0D56DD25017CD1007CBE41 /* API.swift */,
 				BF0D56D325017896007CBE41 /* NetworkResult.swift */,
+				BF9A843E25028EBE005A748D /* PriceFormatter.swift */,
 				BF0D56DA25017A39007CBE41 /* Error */,
 				BF06A04425019DA400365BC2 /* SystemExtensions.swift */,
 			);
@@ -276,6 +281,7 @@
 			children = (
 				BFCD09E12502706500715CEE /* SectionHeaderCell.swift */,
 				BF9A843A25027EDE005A748D /* SectionFooterCell.swift */,
+				BF9A843C250281C7005A748D /* AttributeLabel.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -413,12 +419,14 @@
 				BF0D56D2250175BC007CBE41 /* Menu.swift in Sources */,
 				BF06A03C2501970500365BC2 /* AlertPresentable.swift in Sources */,
 				BF0D56D025017211007CBE41 /* MenuSectionAvailibility.swift in Sources */,
+				BF9A843F25028EBE005A748D /* PriceFormatter.swift in Sources */,
 				BFCD09DA25026CFE00715CEE /* FontMachine.swift in Sources */,
 				BF0D56C725016725007CBE41 /* MenuSectionItem.swift in Sources */,
 				BF0D56D625017907007CBE41 /* MenuFetchError.swift in Sources */,
 				BF06A041250199D100365BC2 /* ViewRouter.swift in Sources */,
 				BF0D569125015601007CBE41 /* MenuInteractor.swift in Sources */,
 				BF0D56DE25017CD1007CBE41 /* API.swift in Sources */,
+				BF9A843D250281C7005A748D /* AttributeLabel.swift in Sources */,
 				BF0D56D425017896007CBE41 /* NetworkResult.swift in Sources */,
 				BF0D56E0250182F1007CBE41 /* MenuSectionAvailibilityHours.swift in Sources */,
 			);
