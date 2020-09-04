@@ -40,6 +40,10 @@
 		BFCD09D825025B1900715CEE /* MenuExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09D725025B1900715CEE /* MenuExtensions.swift */; };
 		BFCD09DA25026CFE00715CEE /* FontMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09D925026CFE00715CEE /* FontMachine.swift */; };
 		BFCD09DC25026D1400715CEE /* ColourPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09DB25026D1400715CEE /* ColourPalette.swift */; };
+		BFCD09DF25026EBE00715CEE /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09DE25026EBE00715CEE /* MenuItemCell.swift */; };
+		BFCD09E22502706500715CEE /* SectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09E12502706500715CEE /* SectionHeaderCell.swift */; };
+		BFCD09E5250272D200715CEE /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09E4250272D200715CEE /* MenuViewModel.swift */; };
+		BFCD09E7250272E200715CEE /* MenuItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09E6250272E200715CEE /* MenuItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +95,10 @@
 		BFCD09D725025B1900715CEE /* MenuExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuExtensions.swift; sourceTree = "<group>"; };
 		BFCD09D925026CFE00715CEE /* FontMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontMachine.swift; sourceTree = "<group>"; };
 		BFCD09DB25026D1400715CEE /* ColourPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourPalette.swift; sourceTree = "<group>"; };
+		BFCD09DE25026EBE00715CEE /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		BFCD09E12502706500715CEE /* SectionHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderCell.swift; sourceTree = "<group>"; };
+		BFCD09E4250272D200715CEE /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		BFCD09E6250272E200715CEE /* MenuItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +139,8 @@
 				BF0D569025015601007CBE41 /* MenuInteractor.swift */,
 				BF06A042250199E800365BC2 /* MenuRouter.swift */,
 				BF0D569225015621007CBE41 /* MenuContract.swift */,
+				BFCD09E8250272E500715CEE /* ViewModels */,
+				BFCD09E025026EDF00715CEE /* Cells */,
 			);
 			path = MenuList;
 			sourceTree = "<group>";
@@ -162,6 +172,7 @@
 		BF0D56DB25017A42007CBE41 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BFCD09E32502706B00715CEE /* Widgets */,
 				BFCD09DD25026D1C00715CEE /* UI */,
 				BF06A03D2501970B00365BC2 /* Protocols */,
 				BF0D56CE2501685A007CBE41 /* Entities */,
@@ -248,6 +259,31 @@
 				BFCD09D925026CFE00715CEE /* FontMachine.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		BFCD09E025026EDF00715CEE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BFCD09DE25026EBE00715CEE /* MenuItemCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		BFCD09E32502706B00715CEE /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				BFCD09E12502706500715CEE /* SectionHeaderCell.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		BFCD09E8250272E500715CEE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BFCD09E4250272D200715CEE /* MenuViewModel.swift */,
+				BFCD09E6250272E200715CEE /* MenuItemViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,17 +390,21 @@
 			files = (
 				BF0D56C925016758007CBE41 /* MenuSection.swift in Sources */,
 				BFCD09DC25026D1400715CEE /* ColourPalette.swift in Sources */,
+				BFCD09E7250272E200715CEE /* MenuItemViewModel.swift in Sources */,
 				BF0D56CD250167CE007CBE41 /* MenuItemOptionSetItem.swift in Sources */,
 				BF06A04525019DA400365BC2 /* SystemExtensions.swift in Sources */,
 				BF0D568C250155E1007CBE41 /* MenuView.swift in Sources */,
 				BF2F05732501547A006B44CC /* AppDelegate.swift in Sources */,
 				BF0D56C425016397007CBE41 /* PresenterRepresentable.swift in Sources */,
+				BFCD09DF25026EBE00715CEE /* MenuItemCell.swift in Sources */,
 				BF0D568F250155F8007CBE41 /* MenuPresenter.swift in Sources */,
 				BF06A03F2501991C00365BC2 /* Navigatable.swift in Sources */,
 				BF06A0492501A5A600365BC2 /* ReusableCell.swift in Sources */,
 				BF0D569325015621007CBE41 /* MenuContract.swift in Sources */,
+				BFCD09E22502706500715CEE /* SectionHeaderCell.swift in Sources */,
 				BF2F05752501547A006B44CC /* SceneDelegate.swift in Sources */,
 				BF0D56CB250167BD007CBE41 /* MenuItemOptionSet.swift in Sources */,
+				BFCD09E5250272D200715CEE /* MenuViewModel.swift in Sources */,
 				BF06A043250199E800365BC2 /* MenuRouter.swift in Sources */,
 				BF0D56D2250175BC007CBE41 /* Menu.swift in Sources */,
 				BF06A03C2501970500365BC2 /* AlertPresentable.swift in Sources */,

@@ -10,16 +10,25 @@ import UIKit
 
 final class MenuView: UIViewController, Navigatable {
     
+    private enum Layout {
+        static let headerHeight: CGFloat = 65.0
+        static let itemHeight: CGFloat = 120.0
+    }
+    
     private let presenter: MenuPresenterRepresentable
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .clear
         collectionView.alwaysBounceVertical = true
         collectionView.showsVerticalScrollIndicator = false
-        // TODO: Register Cells!
+        collectionView.register(MenuItemCell.self,
+                                forCellWithReuseIdentifier: MenuItemCell.reuseIdentifier)
+        collectionView.register(SectionHeaderCell.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: SectionHeaderCell.reuseIdentifier)
         
         return collectionView
     }()
@@ -56,7 +65,7 @@ extension MenuView: MenuViewRepresentable {
     }
     
     func setupSubviews() {
-        view.backgroundColor = .white
+        view.backgroundColor = ColourPalette.lovelyLilac
         setupCollectionView()
         view.addSubviewsForAutolayout(views: [
             collectionView,
@@ -109,12 +118,31 @@ extension MenuView {
 
 extension MenuView: UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         presenter.numberOfItems(inSection: section)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let item = presenter.item(atIndexPath: indexPath),
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuItemCell.reuseIdentifier, for: indexPath) as? MenuItemCell else {
+            fatalError("Uh oh! Something has gone terribly, terribly wrong.")
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let sectionTitle = presenter.sectionTitle(forSection: indexPath.section),
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                                                                                                                   withReuseIdentifier: SectionHeaderCell.reuseIdentifier,
+                                                                                                                            for: indexPath) as? SectionHeaderCell else { return UICollectionReusableView() }
+        
+        headerView.setup(withTitle: sectionTitle)
+        return headerView
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -126,4 +154,22 @@ extension MenuView: UICollectionViewDataSource {
 
 extension MenuView: UICollectionViewDelegate {
 
+}
+
+extension MenuView: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let _ = presenter.item(atIndexPath: indexPath) else { return .zero }
+        return CGSize(width: collectionView.frame.width,
+                      height: Layout.itemHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width,
+                      height: Layout.headerHeight)
+    }
 }

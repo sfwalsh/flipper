@@ -24,7 +24,7 @@ protocol MenuPresenterRepresentable: PresenterRepresentable {
     func numberOfSections() -> Int
     func numberOfItems(inSection section: Int) -> Int
     
-    func item(atIndexPath indexPath: IndexPath) -> Menu?
+    func item(atIndexPath indexPath: IndexPath) -> MenuItemViewModel?
     func didSelectItem(atIndexPath indexPath: IndexPath)
     func sectionTitle(forSection section: Int) -> String?
 }

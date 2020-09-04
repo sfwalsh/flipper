@@ -13,7 +13,7 @@ final class MenuPresenter {
     private unowned var view: MenuViewRepresentable?
     private let interactor: MenuInteractorRepresentable
     private let router: MenuRouterRepresentable
-    private var menu: Menu?
+    private var menuViewModel: MenuViewModel?
     
     init(interactor: MenuInteractorRepresentable,
          router: MenuRouterRepresentable) {
@@ -52,23 +52,21 @@ extension MenuPresenter: MenuPresenterRepresentable {
 extension MenuPresenter {
     
     func numberOfSections() -> Int {
-        return menu?.sections.count ?? 0
+        return menuViewModel?.numberOfSections ?? 0
     }
     
     func numberOfItems(inSection section: Int) -> Int {
-        return 0
+        return menuViewModel?.numberOfItems(inSection: section) ?? 0
     }
     
-    func item(atIndexPath indexPath: IndexPath) -> Menu? {
-        return menu
+    func item(atIndexPath indexPath: IndexPath) -> MenuItemViewModel? {
+        return menuViewModel?.menuItem(atIndexPath: indexPath)
     }
     
-    func didSelectItem(atIndexPath indexPath: IndexPath) {
-        
-    }
+    func didSelectItem(atIndexPath indexPath: IndexPath) { }
     
     func sectionTitle(forSection section: Int) -> String? {
-        return ""
+        return menuViewModel?.menuSectionTitle(forIndex: section)
     }
 }
 
@@ -90,7 +88,7 @@ extension MenuPresenter {
                 case .failure(let err):
                     self?.handleError(error: err)
                 case .success(let menu):
-                    self?.menu = menu
+                    self?.menuViewModel = MenuViewModel(withMenu: menu)
                     self?.view?.reload()
                 }
             }
