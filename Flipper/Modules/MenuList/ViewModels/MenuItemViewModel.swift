@@ -25,10 +25,28 @@ struct MenuItemViewModel {
     }
     
     var priceLabelText: String {
-        return PriceFormatter.format(value: menuSectionItem.price, isMinPrice: false)
+        return calculatePrice()
     }
     
     init(withMenuItem menuItem: MenuSectionItem) {
         self.menuSectionItem = menuItem
+    }
+}
+
+
+// MARK: Private helper functions
+
+extension MenuItemViewModel {
+    
+    private func calculatePrice() -> String {
+        let masterOptionSetItems = menuSectionItem.optionSets
+            .filter({$0.isMasterOptionSet})
+            .flatMap({ $0.items })
+        if masterOptionSetItems.count > 0 {
+            let cheapestOption = masterOptionSetItems.compactMap({ $0.price }).min(by: { $0 < $1 })
+            return PriceFormatter.format(value: cheapestOption, isMinPrice: true)
+        } else {
+            return PriceFormatter.format(value: menuSectionItem.price, isMinPrice: false)
+        }
     }
 }
