@@ -23,6 +23,11 @@ struct Menu: Decodable {
         self.id = try values.decode(Int.self, forKey: .id)
         self.sections = try values.decode([MenuSection].self, forKey: .sections)
     }
+    
+    init(id: Int, sections: [MenuSection]) {
+        self.id = id
+        self.sections = sections
+    }
 }
 
 /*

@@ -14,6 +14,10 @@ final class MockMenuRouter: MenuRouterRepresentable {
     
     var view: Navigatable?
     
+    struct DidCall {
+        var attachView: Bool = false
+    }
+    
     struct DidUpdate {
         var alertMessage: String? = nil
         
@@ -22,6 +26,7 @@ final class MockMenuRouter: MenuRouterRepresentable {
         }
     }
     
+    var didCall: DidCall = DidCall()
     var didUpdate: DidUpdate = DidUpdate()
     
     func presentAlert(withTitle title: String,
@@ -30,4 +35,7 @@ final class MockMenuRouter: MenuRouterRepresentable {
         didUpdate.alertMessage = message
     }
     
+    func attachView(view: Navigatable) {
+        self.didCall.attachView = true
+     }
 }
