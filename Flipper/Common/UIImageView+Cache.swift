@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImageView {
     
-    func loadImage(forURL urlString: String) {
+    func  loadImage(forURL urlString: String) {
         guard let imageURL = URL(string: urlString) else { return }
         
         let request = URLRequest(url: imageURL)
@@ -42,10 +42,6 @@ extension UIImageView {
     }
     
     func fadeToImage(image: UIImage) {
-        if self.image == image {
-            return
-        }
-        
         UIView.transition(with: self,
                           duration: 0.26,
                           options: [.transitionCrossDissolve],
