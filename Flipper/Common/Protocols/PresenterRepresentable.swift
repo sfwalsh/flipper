@@ -6,6 +6,10 @@
 //  Copyright © 2020 Stephen Walsh. All rights reserved.
 //
 
+/*
+ A base Presenter protocol, ensuring consistency between different modules, and the inclusion of foundational presenter calls
+ */
+
 import Foundation
 
 protocol PresenterRepresentable {

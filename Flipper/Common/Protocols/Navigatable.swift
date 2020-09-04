@@ -6,6 +6,10 @@
 //  Copyright © 2020 Stephen Walsh. All rights reserved.
 //
 
+/*
+ convienence protocol used with AlertPresentable, and the Router functionality
+ */
+
 import Foundation
 
 import UIKit

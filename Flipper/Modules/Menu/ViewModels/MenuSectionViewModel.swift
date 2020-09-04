@@ -8,6 +8,10 @@
 
 import Foundation
 
+/*
+ An abstraction of the MenuSection, used by the view for rendering sections
+ */
+
 struct MenuSectionViewModel {
     
     private let section: MenuSection

@@ -8,6 +8,10 @@
 
 import UIKit
 
+/*
+ Responsible for laying out and updating the view, and notifying the presenter of ongoing user interaction
+ */
+
 final class MenuView: UIViewController, Navigatable {
     
     private enum Layout {

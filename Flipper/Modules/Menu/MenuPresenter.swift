@@ -6,6 +6,10 @@
 //  Copyright © 2020 Stephen Walsh. All rights reserved.
 //
 
+/*
+ Responsible for notifying the view of updates to the model, instigating requests on the interactor, and delegating routing to the router
+ */
+
 import Foundation
 
 final class MenuPresenter {

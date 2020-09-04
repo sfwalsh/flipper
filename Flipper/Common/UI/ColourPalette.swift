@@ -6,6 +6,10 @@
 //  Copyright © 2020 Stephen Walsh. All rights reserved.
 //
 
+/*
+ Indexes Colours used in the app
+ */
+
 import UIKit
 
 struct ColourPalette {

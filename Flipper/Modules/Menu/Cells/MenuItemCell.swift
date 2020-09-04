@@ -9,6 +9,10 @@
 import UIKit
 import SDWebImage
 
+/*
+ Used by the Collectionview of the MenuView for rendering a single MenuItem
+ */
+
 final class MenuItemCell: UICollectionViewCell, ReusableCell {
     
     private enum Layout {

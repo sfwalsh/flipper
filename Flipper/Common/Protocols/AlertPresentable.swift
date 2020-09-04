@@ -6,6 +6,9 @@
 //  Copyright © 2020 Stephen Walsh. All rights reserved.
 //
 
+/*
+ A "mix-in" style protocol extension, used to separate potentially repeated code around presenting alerts
+ */
 
 import UIKit
 

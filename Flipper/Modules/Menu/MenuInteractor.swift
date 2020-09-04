@@ -8,6 +8,10 @@
 
 import Foundation
 
+/*
+ An object for managing the fetching of new data from the network. In a larger app, it could also be used to interface with the data persistence layer
+ */
+
 final class MenuInteractor {
 
 }

@@ -8,6 +8,10 @@
 
 import Foundation
 
+/*
+ Contract giving a birds eye view of the functions and responsibilities of each object in the module
+ */
+
 protocol MenuViewRepresentable: class {
     func applyTitle(title: String)
     func setupSubviews()

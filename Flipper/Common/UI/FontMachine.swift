@@ -6,6 +6,10 @@
 //  Copyright © 2020 Stephen Walsh. All rights reserved.
 //
 
+/*
+ Standardises fonts used in the app
+ */
+
 import UIKit
 
 struct FontMachine {

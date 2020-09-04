@@ -8,12 +8,16 @@
 
 import Foundation
 
+/*
+ A stub class where routing logic would go to other screens, also manages presentation of modals and alerts.
+ */
+
 final class MenuRouter: MenuRouterRepresentable {
 
     internal weak var view: Navigatable?
     
     /*
-     In a real app, the routing logic could go here
+     In a real app, the routing logic to other views could go here
      */
 }
 

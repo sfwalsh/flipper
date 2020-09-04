@@ -6,6 +6,10 @@
 //  Copyright © 2020 Stephen Walsh. All rights reserved.
 //
 
+/*
+ Simple API enum for generating requests, which can be implemented by a modules interactor
+ */
+
 import Foundation
 
 enum API {
@@ -25,7 +29,7 @@ enum API {
         components.host = host
         components.scheme = URLScheme.https.rawValue
         
-        // NOTE: the path has been hardcoded
+        // NOTE: the path has been hardcoded, as there is only one sample menu
         components.path = "/prod/16798/e6220da2-c34a-4ea2-bb51-a3e190fc5f08.json"
         
         guard let url = components.url else {

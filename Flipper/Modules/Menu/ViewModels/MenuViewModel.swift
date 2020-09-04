@@ -6,6 +6,10 @@
 //  Copyright © 2020 Stephen Walsh. All rights reserved.
 //
 
+/*
+ A formatted and abstracted rendering of the API Menu object, used by the presenter to manage the view
+ */
+
 import Foundation
 
 struct MenuViewModel {

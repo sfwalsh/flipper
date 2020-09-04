@@ -8,6 +8,10 @@
 
 import Foundation
 
+/*
+ An abstraction of the MenuSectionItem, used by the View's CollectionViewCells for presenting & formatting the data
+ */
+
 struct MenuItemViewModel {
     
     private let menuSectionItem: MenuSectionItem
