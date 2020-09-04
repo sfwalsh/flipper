@@ -8,9 +8,28 @@
 
 import UIKit
 
+extension UIImage {
+
+  func getThumbnail() -> UIImage? {
+
+    guard let imageData = self.pngData() else { return nil }
+
+    let options = [
+        kCGImageSourceCreateThumbnailWithTransform: true,
+        kCGImageSourceCreateThumbnailFromImageAlways: true,
+        kCGImageSourceThumbnailMaxPixelSize: 300] as CFDictionary
+
+    guard let source = CGImageSourceCreateWithData(imageData as CFData, nil) else { return nil }
+    guard let imageReference = CGImageSourceCreateThumbnailAtIndex(source, 0, options) else { return nil }
+
+    return UIImage(cgImage: imageReference)
+
+  }
+}
+
 extension UIImageView {
     
-    func  loadImage(forURL urlString: String) {
+    func loadImage(forURL urlString: String) {
         guard let imageURL = URL(string: urlString) else { return }
         
         let request = URLRequest(url: imageURL)
@@ -29,11 +48,13 @@ extension UIImageView {
                     if let data = data,
                         let response = response,
                         ((response as? HTTPURLResponse)?.statusCode ?? 500) < 300,
-                        let image = UIImage(data: data) {
-                        let cacheItem = CachedURLResponse(response: response, data: data)
+                        let image = UIImage(data: data),
+                        let thumbImage = image.getThumbnail(),
+                        let thumbData = image.pngData() {
+                        let cacheItem = CachedURLResponse(response: response, data: thumbData)
                         cache.storeCachedResponse(cacheItem, for: request)
                         DispatchQueue.main.async { [weak self] in
-                            self?.fadeToImage(image: image)
+                            self?.fadeToImage(image: thumbImage)
                         }
                     }
                 }).resume()

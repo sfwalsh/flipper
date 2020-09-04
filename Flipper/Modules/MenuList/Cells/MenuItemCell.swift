@@ -22,13 +22,17 @@ final class MenuItemCell: UICollectionViewCell, ReusableCell {
         static let minPriceLabelWidth: CGFloat = 70.0
     }
     
+    private enum Style {
+        static let placeholderImage: UIImage = #imageLiteral(resourceName: "empty-state-icon")
+    }
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 4.0
         imageView.backgroundColor = ColourPalette.alphaBlack10
-        
+        imageView.image = Style.placeholderImage
         return imageView
     }()
     
@@ -69,7 +73,7 @@ final class MenuItemCell: UICollectionViewCell, ReusableCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageView.image = nil
+        imageView.image = Style.placeholderImage
     }
 }
 
@@ -144,7 +148,7 @@ extension MenuItemCell {
         if let imageURLString = viewModel.mainImageURLString {
             imageView.loadImage(forURL: imageURLString)
         } else {
-            imageView.image = nil
+            imageView.image = Style.placeholderImage
         }
     }
 }

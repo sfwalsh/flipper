@@ -15,7 +15,9 @@ struct MenuViewModel {
     
     init(withMenu menu: Menu) {
         self.menu = menu
-        self.sections = menu.sections.map({ MenuSectionViewModel(section: $0) })
+        self.sections = menu.sections
+            .map({ MenuSectionViewModel(section: $0) })
+            .filter({ $0.items.count > 0 })
     }
     
     var numberOfSections: Int {

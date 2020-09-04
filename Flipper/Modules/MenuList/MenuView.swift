@@ -33,7 +33,6 @@ final class MenuView: UIViewController, Navigatable {
         collectionView.register(SectionFooterCell.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
                                 withReuseIdentifier: SectionFooterCell.reuseIdentifier)
-        
         return collectionView
     }()
     
