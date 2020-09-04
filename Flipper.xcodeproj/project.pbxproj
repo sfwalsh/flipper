@@ -38,6 +38,8 @@
 		BFCD09D4250254A500715CEE /* MockMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09D3250254A500715CEE /* MockMenuRouter.swift */; };
 		BFCD09D6250254B200715CEE /* MockMenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09D5250254B200715CEE /* MockMenuInteractor.swift */; };
 		BFCD09D825025B1900715CEE /* MenuExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09D725025B1900715CEE /* MenuExtensions.swift */; };
+		BFCD09DA25026CFE00715CEE /* FontMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09D925026CFE00715CEE /* FontMachine.swift */; };
+		BFCD09DC25026D1400715CEE /* ColourPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09DB25026D1400715CEE /* ColourPalette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		BFCD09D3250254A500715CEE /* MockMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMenuRouter.swift; sourceTree = "<group>"; };
 		BFCD09D5250254B200715CEE /* MockMenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMenuInteractor.swift; sourceTree = "<group>"; };
 		BFCD09D725025B1900715CEE /* MenuExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuExtensions.swift; sourceTree = "<group>"; };
+		BFCD09D925026CFE00715CEE /* FontMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontMachine.swift; sourceTree = "<group>"; };
+		BFCD09DB25026D1400715CEE /* ColourPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourPalette.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 		BF0D56DB25017A42007CBE41 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BFCD09DD25026D1C00715CEE /* UI */,
 				BF06A03D2501970B00365BC2 /* Protocols */,
 				BF0D56CE2501685A007CBE41 /* Entities */,
 				BF0D56DD25017CD1007CBE41 /* API.swift */,
@@ -234,6 +239,15 @@
 				BF2F05892501547B006B44CC /* MenuPresenterTests.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		BFCD09DD25026D1C00715CEE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BFCD09DB25026D1400715CEE /* ColourPalette.swift */,
+				BFCD09D925026CFE00715CEE /* FontMachine.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF0D56C925016758007CBE41 /* MenuSection.swift in Sources */,
+				BFCD09DC25026D1400715CEE /* ColourPalette.swift in Sources */,
 				BF0D56CD250167CE007CBE41 /* MenuItemOptionSetItem.swift in Sources */,
 				BF06A04525019DA400365BC2 /* SystemExtensions.swift in Sources */,
 				BF0D568C250155E1007CBE41 /* MenuView.swift in Sources */,
@@ -354,6 +369,7 @@
 				BF0D56D2250175BC007CBE41 /* Menu.swift in Sources */,
 				BF06A03C2501970500365BC2 /* AlertPresentable.swift in Sources */,
 				BF0D56D025017211007CBE41 /* MenuSectionAvailibility.swift in Sources */,
+				BFCD09DA25026CFE00715CEE /* FontMachine.swift in Sources */,
 				BF0D56C725016725007CBE41 /* MenuSectionItem.swift in Sources */,
 				BF0D56D625017907007CBE41 /* MenuFetchError.swift in Sources */,
 				BF06A041250199D100365BC2 /* ViewRouter.swift in Sources */,
