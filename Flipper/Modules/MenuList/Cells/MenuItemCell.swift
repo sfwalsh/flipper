@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class MenuItemCell: UICollectionViewCell, ReusableCell {
     
@@ -144,12 +145,7 @@ extension MenuItemCell {
         priceLabel.update(withTitle: viewModel.priceLabelText)
         titleLabel.text = viewModel.titleLabelText
         descriptionLabel.text = viewModel.descriptionLabelText
-        
-        if let imageURLString = viewModel.mainImageURLString {
-            imageView.loadImage(forURL: imageURLString)
-        } else {
-            imageView.image = Style.placeholderImage
-        }
+        applyImage(forURLString: viewModel.mainImageURLString)
     }
 }
 
@@ -207,5 +203,16 @@ extension MenuItemCell {
     
     private func offsetRightConstraintConstant(constant: CGFloat) -> CGFloat {
         return constant + Layout.insets.right
+    }
+    
+    private func applyImage(forURLString urlString: String?) {
+        if let imageURLString = urlString,
+            let imageURL = URL(string: imageURLString) {
+            imageView.sd_setImage(with: imageURL,
+                                  placeholderImage: Style.placeholderImage,
+                                  options: [.scaleDownLargeImages])
+            
+            imageView.sd_imageTransition = SDWebImageTransition.fade(duration: 4)
+        }
     }
 }
