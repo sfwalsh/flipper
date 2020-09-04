@@ -12,8 +12,9 @@ final class SectionHeaderCell: UICollectionReusableView, ReusableCell {
     
     private enum Layout {
         static let insets = UIEdgeInsets(top: 30, left: 20, bottom: 10, right: 20)
+        static let seperatorBottomInset: CGFloat = 10.0
         static let separatorLineWidth: CGFloat = 3.0
-        static let separatorLength: CGFloat = 74.0
+        static let separatorLength: CGFloat = 64.0
     }
     
     private let headerLabel: UILabel = {
@@ -38,8 +39,7 @@ final class SectionHeaderCell: UICollectionReusableView, ReusableCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            headerLabel.topAnchor.constraint(equalTo: topAnchor, constant: Layout.insets.top),
-            headerLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Layout.insets.bottom),
+            headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Layout.insets.left),
             headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Layout.insets.right),
             ])
@@ -66,12 +66,12 @@ extension SectionHeaderCell {
                                for rect: CGRect) {
         
         context.move(to: CGPoint(x: rect.minX+Layout.insets.left,
-                                 y: rect.maxY-Layout.separatorLineWidth))
+                                 y: rect.maxY-(Layout.separatorLineWidth+Layout.seperatorBottomInset)))
         context.addLine(to: CGPoint(x: rect.minX+Layout.insets.left+Layout.separatorLength,
-                                    y: rect.maxY-Layout.separatorLineWidth))
+                                    y: rect.maxY-(Layout.separatorLineWidth+Layout.seperatorBottomInset)))
         
         context.setLineWidth(Layout.separatorLineWidth)
-        context.setStrokeColor(ColourPalette.offWhite.cgColor)
+        context.setStrokeColor(ColourPalette.coralOrange.cgColor)
         context.strokePath()
     }
 }

@@ -11,7 +11,8 @@ import UIKit
 final class MenuView: UIViewController, Navigatable {
     
     private enum Layout {
-        static let headerHeight: CGFloat = 65.0
+        static let headerHeight: CGFloat = 85.0
+        static let footerHeight: CGFloat = 45.0
         static let itemHeight: CGFloat = 120.0
     }
     
@@ -29,6 +30,9 @@ final class MenuView: UIViewController, Navigatable {
         collectionView.register(SectionHeaderCell.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: SectionHeaderCell.reuseIdentifier)
+        collectionView.register(SectionFooterCell.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                                withReuseIdentifier: SectionFooterCell.reuseIdentifier)
         
         return collectionView
     }()
@@ -108,7 +112,7 @@ extension MenuView {
             
             activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        
+            
         ])
     }
 }
@@ -125,35 +129,56 @@ extension MenuView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let item = presenter.item(atIndexPath: indexPath),
+        guard let viewModel = presenter.item(atIndexPath: indexPath),
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuItemCell.reuseIdentifier, for: indexPath) as? MenuItemCell else {
-            fatalError("Uh oh! Something has gone terribly, terribly wrong.")
+                fatalError("Uh oh! Something has gone terribly, terribly wrong.")
         }
         
+        cell.setup(withViewModel: viewModel)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            return headerView(for: collectionView, at: indexPath)
+        } else {
+            return footerView(for: collectionView, at: indexPath)
+        }
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return presenter.numberOfSections()
+    }
+    
+    private func headerView(for collectionView: UICollectionView,
+                            at indexPath: IndexPath) -> UICollectionReusableView {
+        
         guard let sectionTitle = presenter.sectionTitle(forSection: indexPath.section),
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
-                                                                                                                                                   withReuseIdentifier: SectionHeaderCell.reuseIdentifier,
-                                                                                                                            for: indexPath) as? SectionHeaderCell else { return UICollectionReusableView() }
+                                                                             withReuseIdentifier: SectionHeaderCell.reuseIdentifier,
+                                                                             for: indexPath) as? SectionHeaderCell else { return UICollectionReusableView() }
         
         headerView.setup(withTitle: sectionTitle)
         return headerView
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return presenter.numberOfSections()
+    private func footerView(for collectionView: UICollectionView,
+                            at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter,
+                                                                               withReuseIdentifier: SectionFooterCell.reuseIdentifier,
+                                                                               for: indexPath) as? SectionFooterCell else { return UICollectionReusableView() }
+        
+        return footerView
     }
 }
 
 // MARK: UICollectionViewDelegate Implementation
 
 extension MenuView: UICollectionViewDelegate {
-
+    
 }
 
 extension MenuView: UICollectionViewDelegateFlowLayout {
@@ -171,5 +196,10 @@ extension MenuView: UICollectionViewDelegateFlowLayout {
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width,
                       height: Layout.headerHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width,
+                      height: Layout.footerHeight)
     }
 }
