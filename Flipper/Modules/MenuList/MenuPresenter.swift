@@ -12,10 +12,11 @@ final class MenuPresenter {
     
     private unowned var view: MenuViewRepresentable?
     private let interactor: MenuInteractorRepresentable
-    private let router: MenuRouter
+    private let router: MenuRouterRepresentable
     private var menu: Menu?
     
-    init(interactor: MenuInteractorRepresentable, router: MenuRouter) {
+    init(interactor: MenuInteractorRepresentable,
+         router: MenuRouterRepresentable) {
         self.interactor = interactor
         self.router = router
     }

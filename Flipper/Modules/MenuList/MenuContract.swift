@@ -28,11 +28,13 @@ protocol MenuPresenterRepresentable: PresenterRepresentable {
     func didSelectItem(atIndexPath indexPath: IndexPath)
     func sectionTitle(forSection section: Int) -> String?
 }
-extension MenuPresenterRepresentable {
-    
-
-}
 
 protocol MenuInteractorRepresentable {
     func fetchMenu(completion: @escaping ((NetworkResult<Menu, MenuFetchError>) -> Void))
+}
+
+protocol MenuRouterRepresentable: Router {
+    func presentAlert(withTitle title: String,
+                         message: String,
+                         options: [(String, (() -> Void))])
 }

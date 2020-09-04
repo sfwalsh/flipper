@@ -33,7 +33,10 @@
 		BF2F05752501547A006B44CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F05742501547A006B44CC /* SceneDelegate.swift */; };
 		BF2F057C2501547B006B44CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2F057B2501547B006B44CC /* Assets.xcassets */; };
 		BF2F057F2501547B006B44CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2F057D2501547B006B44CC /* LaunchScreen.storyboard */; };
-		BF2F058A2501547B006B44CC /* FlipperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F05892501547B006B44CC /* FlipperTests.swift */; };
+		BF2F058A2501547B006B44CC /* MenuPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2F05892501547B006B44CC /* MenuPresenterTests.swift */; };
+		BFCD09D22502549800715CEE /* MockMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09D12502549800715CEE /* MockMenuView.swift */; };
+		BFCD09D4250254A500715CEE /* MockMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09D3250254A500715CEE /* MockMenuRouter.swift */; };
+		BFCD09D6250254B200715CEE /* MockMenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09D5250254B200715CEE /* MockMenuInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,8 +80,11 @@
 		BF2F057E2501547B006B44CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2F05802501547B006B44CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF2F05852501547B006B44CC /* FlipperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlipperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF2F05892501547B006B44CC /* FlipperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipperTests.swift; sourceTree = "<group>"; };
+		BF2F05892501547B006B44CC /* MenuPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenterTests.swift; sourceTree = "<group>"; };
 		BF2F058B2501547B006B44CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFCD09D12502549800715CEE /* MockMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMenuView.swift; sourceTree = "<group>"; };
+		BFCD09D3250254A500715CEE /* MockMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMenuRouter.swift; sourceTree = "<group>"; };
+		BFCD09D5250254B200715CEE /* MockMenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMenuInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,10 +216,21 @@
 		BF2F05882501547B006B44CC /* FlipperTests */ = {
 			isa = PBXGroup;
 			children = (
-				BF2F05892501547B006B44CC /* FlipperTests.swift */,
+				BFCD09D12502549800715CEE /* MockMenuView.swift */,
+				BFCD09D3250254A500715CEE /* MockMenuRouter.swift */,
+				BFCD09D5250254B200715CEE /* MockMenuInteractor.swift */,
+				BFCD09D02502548700715CEE /* Tests */,
 				BF2F058B2501547B006B44CC /* Info.plist */,
 			);
 			path = FlipperTests;
+			sourceTree = "<group>";
+		};
+		BFCD09D02502548700715CEE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BF2F05892501547B006B44CC /* MenuPresenterTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,7 +365,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2F058A2501547B006B44CC /* FlipperTests.swift in Sources */,
+				BF2F058A2501547B006B44CC /* MenuPresenterTests.swift in Sources */,
+				BFCD09D6250254B200715CEE /* MockMenuInteractor.swift in Sources */,
+				BFCD09D22502549800715CEE /* MockMenuView.swift in Sources */,
+				BFCD09D4250254A500715CEE /* MockMenuRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

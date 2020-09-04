@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class MenuRouter: Router {
+final class MenuRouter: MenuRouterRepresentable {
 
     internal weak var view: Navigatable?
     
