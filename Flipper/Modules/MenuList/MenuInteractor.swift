@@ -1,5 +1,5 @@
 //
-//  MenuListInteractor.swift
+//  MenuInteractor.swift
 //  Flipper
 //
 //  Created by Stephen Walsh on 03/09/2020.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-final class MenuListInteractor {
+final class MenuInteractor {
 
 }
 
-// MARK: MenuListInteractorRepresentable Implementation
+// MARK: MenuInteractorRepresentable Implementation
 
-extension MenuListInteractor: MenuListInteractorRepresentable {
+extension MenuInteractor: MenuInteractorRepresentable {
     
     func fetchMenu(completion: @escaping ((NetworkResult<Menu, MenuFetchError>) -> Void)) {
         guard let request = API.fetchMenuRequest() else {
@@ -41,7 +41,7 @@ extension MenuListInteractor: MenuListInteractorRepresentable {
 
 // MARK: Private helper functions
 
-extension MenuListInteractor {
+extension MenuInteractor {
     
     private func parseMenuResponseData(data: Data) -> Menu? {
         return try? JSONDecoder().decode(Menu.self, from: data)

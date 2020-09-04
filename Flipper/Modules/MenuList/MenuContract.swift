@@ -1,5 +1,5 @@
 //
-//  MenuListContract.swift
+//  MenuContract.swift
 //  Flipper
 //
 //  Created by Stephen Walsh on 03/09/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MenuListViewRepresentable: class {
+protocol MenuViewRepresentable: class {
     func applyTitle(title: String)
     func setupSubviews()
     func reload()
@@ -16,8 +16,8 @@ protocol MenuListViewRepresentable: class {
     func hideActivityIndicator()
 }
 
-protocol MenuListPresenterRepresentable: PresenterRepresentable {
-    func attachView(view: MenuListViewRepresentable & Navigatable)
+protocol MenuPresenterRepresentable: PresenterRepresentable {
+    func attachView(view: MenuViewRepresentable & Navigatable)
     
     
     // MARK: Datasource Operators
@@ -28,11 +28,11 @@ protocol MenuListPresenterRepresentable: PresenterRepresentable {
     func didSelectItem(atIndexPath indexPath: IndexPath)
     func sectionTitle(forSection section: Int) -> String?
 }
-extension MenuListPresenterRepresentable {
+extension MenuPresenterRepresentable {
     
 
 }
 
-protocol MenuListInteractorRepresentable {
+protocol MenuInteractorRepresentable {
     func fetchMenu(completion: @escaping ((NetworkResult<Menu, MenuFetchError>) -> Void))
 }

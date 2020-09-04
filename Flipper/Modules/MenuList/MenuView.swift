@@ -1,5 +1,5 @@
 //
-//  MenuListView.swift
+//  MenuView.swift
 //  Flipper
 //
 //  Created by Stephen Walsh on 03/09/2020.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class MenuListView: UIViewController, Navigatable {
+final class MenuView: UIViewController, Navigatable {
     
-    private let presenter: MenuListPresenterRepresentable
+    private let presenter: MenuPresenterRepresentable
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -31,7 +31,7 @@ final class MenuListView: UIViewController, Navigatable {
         return activityIndicator
     }()
     
-    init(presenter: MenuListPresenterRepresentable) {
+    init(presenter: MenuPresenterRepresentable) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
         self.presenter.attachView(view: self)
@@ -43,9 +43,9 @@ final class MenuListView: UIViewController, Navigatable {
 }
 
 
-// MARK: MenuListViewRepresentable Implementation
+// MARK: MenuViewRepresentable Implementation
 
-extension MenuListView: MenuListViewRepresentable {
+extension MenuView: MenuViewRepresentable {
     
     func reload() {
         collectionView.reloadData()
@@ -77,7 +77,7 @@ extension MenuListView: MenuListViewRepresentable {
 
 // MARK: View methods
 
-extension MenuListView {
+extension MenuView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,7 +107,7 @@ extension MenuListView {
 
 // MARK: UICollectionViewDataSource Implementation
 
-extension MenuListView: UICollectionViewDataSource {
+extension MenuView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         presenter.numberOfItems(inSection: section)
@@ -124,6 +124,6 @@ extension MenuListView: UICollectionViewDataSource {
 
 // MARK: UICollectionViewDelegate Implementation
 
-extension MenuListView: UICollectionViewDelegate {
+extension MenuView: UICollectionViewDelegate {
 
 }

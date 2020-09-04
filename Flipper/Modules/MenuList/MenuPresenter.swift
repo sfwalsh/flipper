@@ -1,5 +1,5 @@
 //
-//  MenuListPresenter.swift
+//  MenuPresenter.swift
 //  Flipper
 //
 //  Created by Stephen Walsh on 03/09/2020.
@@ -8,25 +8,25 @@
 
 import Foundation
 
-final class MenuListPresenter {
+final class MenuPresenter {
     
-    private unowned var view: MenuListViewRepresentable?
-    private let interactor: MenuListInteractorRepresentable
-    private let router: MenuListRouter
+    private unowned var view: MenuViewRepresentable?
+    private let interactor: MenuInteractorRepresentable
+    private let router: MenuRouter
     private var menu: Menu?
     
-    init(interactor: MenuListInteractorRepresentable, router: MenuListRouter) {
+    init(interactor: MenuInteractorRepresentable, router: MenuRouter) {
         self.interactor = interactor
         self.router = router
     }
 }
 
 
-// MARK: MenuListPresenterRepresentable Implementation
+// MARK: MenuPresenterRepresentable Implementation
 
-extension MenuListPresenter: MenuListPresenterRepresentable {
+extension MenuPresenter: MenuPresenterRepresentable {
     
-    func attachView(view: MenuListViewRepresentable & Navigatable) {
+    func attachView(view: MenuViewRepresentable & Navigatable) {
         self.view = view
         self.router.attachView(view: view)
     }
@@ -48,10 +48,10 @@ extension MenuListPresenter: MenuListPresenterRepresentable {
 
 // MARK: Datasource Operator Implementation
 
-extension MenuListPresenter {
+extension MenuPresenter {
     
     func numberOfSections() -> Int {
-        return 0
+        return menu?.sections.count ?? 0
     }
     
     func numberOfItems(inSection section: Int) -> Int {
@@ -73,7 +73,7 @@ extension MenuListPresenter {
 
 // MARK: Private helpers
 
-extension MenuListPresenter {
+extension MenuPresenter {
     
     private func performInitialSetup() {
         view?.applyTitle(title: NSLocalizedString("FLIPPER_TITLE", comment: ""))

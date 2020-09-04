@@ -1,5 +1,5 @@
 //
-//  MenuListRouter.swift
+//  MenuRouter.swift
 //  Flipper
 //
 //  Created by Stephen Walsh on 03/09/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class MenuListRouter: Router {
+final class MenuRouter: Router {
 
     internal weak var view: Navigatable?
     
@@ -19,4 +19,4 @@ final class MenuListRouter: Router {
 
 // MARK: AlertPresentable Implementation
 
-extension MenuListRouter: AlertPresentable { }
+extension MenuRouter: AlertPresentable { }

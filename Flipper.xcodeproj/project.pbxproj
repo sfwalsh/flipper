@@ -10,13 +10,13 @@
 		BF06A03C2501970500365BC2 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF06A03B2501970500365BC2 /* AlertPresentable.swift */; };
 		BF06A03F2501991C00365BC2 /* Navigatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF06A03E2501991C00365BC2 /* Navigatable.swift */; };
 		BF06A041250199D100365BC2 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF06A040250199D100365BC2 /* ViewRouter.swift */; };
-		BF06A043250199E800365BC2 /* MenuListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF06A042250199E800365BC2 /* MenuListRouter.swift */; };
+		BF06A043250199E800365BC2 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF06A042250199E800365BC2 /* MenuRouter.swift */; };
 		BF06A04525019DA400365BC2 /* SystemExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF06A04425019DA400365BC2 /* SystemExtensions.swift */; };
 		BF06A0492501A5A600365BC2 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF06A0482501A5A600365BC2 /* ReusableCell.swift */; };
-		BF0D568C250155E1007CBE41 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D568B250155E1007CBE41 /* MenuListView.swift */; };
-		BF0D568F250155F8007CBE41 /* MenuListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D568E250155F8007CBE41 /* MenuListPresenter.swift */; };
-		BF0D569125015601007CBE41 /* MenuListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D569025015601007CBE41 /* MenuListInteractor.swift */; };
-		BF0D569325015621007CBE41 /* MenuListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D569225015621007CBE41 /* MenuListContract.swift */; };
+		BF0D568C250155E1007CBE41 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D568B250155E1007CBE41 /* MenuView.swift */; };
+		BF0D568F250155F8007CBE41 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D568E250155F8007CBE41 /* MenuPresenter.swift */; };
+		BF0D569125015601007CBE41 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D569025015601007CBE41 /* MenuInteractor.swift */; };
+		BF0D569325015621007CBE41 /* MenuContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D569225015621007CBE41 /* MenuContract.swift */; };
 		BF0D56C425016397007CBE41 /* PresenterRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D56C325016397007CBE41 /* PresenterRepresentable.swift */; };
 		BF0D56C725016725007CBE41 /* MenuSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D56C625016725007CBE41 /* MenuSectionItem.swift */; };
 		BF0D56C925016758007CBE41 /* MenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D56C825016758007CBE41 /* MenuSection.swift */; };
@@ -50,13 +50,13 @@
 		BF06A03B2501970500365BC2 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		BF06A03E2501991C00365BC2 /* Navigatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigatable.swift; sourceTree = "<group>"; };
 		BF06A040250199D100365BC2 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
-		BF06A042250199E800365BC2 /* MenuListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListRouter.swift; sourceTree = "<group>"; };
+		BF06A042250199E800365BC2 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
 		BF06A04425019DA400365BC2 /* SystemExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemExtensions.swift; sourceTree = "<group>"; };
 		BF06A0482501A5A600365BC2 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
-		BF0D568B250155E1007CBE41 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
-		BF0D568E250155F8007CBE41 /* MenuListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListPresenter.swift; sourceTree = "<group>"; };
-		BF0D569025015601007CBE41 /* MenuListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListInteractor.swift; sourceTree = "<group>"; };
-		BF0D569225015621007CBE41 /* MenuListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListContract.swift; sourceTree = "<group>"; };
+		BF0D568B250155E1007CBE41 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		BF0D568E250155F8007CBE41 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
+		BF0D569025015601007CBE41 /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
+		BF0D569225015621007CBE41 /* MenuContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContract.swift; sourceTree = "<group>"; };
 		BF0D56C325016397007CBE41 /* PresenterRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterRepresentable.swift; sourceTree = "<group>"; };
 		BF0D56C625016725007CBE41 /* MenuSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSectionItem.swift; sourceTree = "<group>"; };
 		BF0D56C825016758007CBE41 /* MenuSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSection.swift; sourceTree = "<group>"; };
@@ -114,11 +114,11 @@
 		BF0D568D250155E5007CBE41 /* MenuList */ = {
 			isa = PBXGroup;
 			children = (
-				BF0D568B250155E1007CBE41 /* MenuListView.swift */,
-				BF0D568E250155F8007CBE41 /* MenuListPresenter.swift */,
-				BF0D569025015601007CBE41 /* MenuListInteractor.swift */,
-				BF06A042250199E800365BC2 /* MenuListRouter.swift */,
-				BF0D569225015621007CBE41 /* MenuListContract.swift */,
+				BF0D568B250155E1007CBE41 /* MenuView.swift */,
+				BF0D568E250155F8007CBE41 /* MenuPresenter.swift */,
+				BF0D569025015601007CBE41 /* MenuInteractor.swift */,
+				BF06A042250199E800365BC2 /* MenuRouter.swift */,
+				BF0D569225015621007CBE41 /* MenuContract.swift */,
 			);
 			path = MenuList;
 			sourceTree = "<group>";
@@ -321,23 +321,23 @@
 				BF0D56C925016758007CBE41 /* MenuSection.swift in Sources */,
 				BF0D56CD250167CE007CBE41 /* MenuItemOptionSetItem.swift in Sources */,
 				BF06A04525019DA400365BC2 /* SystemExtensions.swift in Sources */,
-				BF0D568C250155E1007CBE41 /* MenuListView.swift in Sources */,
+				BF0D568C250155E1007CBE41 /* MenuView.swift in Sources */,
 				BF2F05732501547A006B44CC /* AppDelegate.swift in Sources */,
 				BF0D56C425016397007CBE41 /* PresenterRepresentable.swift in Sources */,
-				BF0D568F250155F8007CBE41 /* MenuListPresenter.swift in Sources */,
+				BF0D568F250155F8007CBE41 /* MenuPresenter.swift in Sources */,
 				BF06A03F2501991C00365BC2 /* Navigatable.swift in Sources */,
 				BF06A0492501A5A600365BC2 /* ReusableCell.swift in Sources */,
-				BF0D569325015621007CBE41 /* MenuListContract.swift in Sources */,
+				BF0D569325015621007CBE41 /* MenuContract.swift in Sources */,
 				BF2F05752501547A006B44CC /* SceneDelegate.swift in Sources */,
 				BF0D56CB250167BD007CBE41 /* MenuItemOptionSet.swift in Sources */,
-				BF06A043250199E800365BC2 /* MenuListRouter.swift in Sources */,
+				BF06A043250199E800365BC2 /* MenuRouter.swift in Sources */,
 				BF0D56D2250175BC007CBE41 /* Menu.swift in Sources */,
 				BF06A03C2501970500365BC2 /* AlertPresentable.swift in Sources */,
 				BF0D56D025017211007CBE41 /* MenuSectionAvailibility.swift in Sources */,
 				BF0D56C725016725007CBE41 /* MenuSectionItem.swift in Sources */,
 				BF0D56D625017907007CBE41 /* MenuFetchError.swift in Sources */,
 				BF06A041250199D100365BC2 /* ViewRouter.swift in Sources */,
-				BF0D569125015601007CBE41 /* MenuListInteractor.swift in Sources */,
+				BF0D569125015601007CBE41 /* MenuInteractor.swift in Sources */,
 				BF0D56DE25017CD1007CBE41 /* API.swift in Sources */,
 				BF0D56D425017896007CBE41 /* NetworkResult.swift in Sources */,
 				BF0D56E0250182F1007CBE41 /* MenuSectionAvailibilityHours.swift in Sources */,
