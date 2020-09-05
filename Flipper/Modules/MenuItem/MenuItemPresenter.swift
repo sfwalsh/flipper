@@ -11,10 +11,10 @@ import Foundation
 final class MenuItemPresenter {
     
     private unowned var view: MenuItemViewRepresentable?
-    private let viewModel: MenuItemViewModel
+    private let viewModel: MenuItemViewModelAdapter
     
     init(withViewModel viewModel: MenuItemViewModel) {
-        self.viewModel = viewModel
+        self.viewModel = MenuItemViewModelAdapter(viewModel: viewModel)
     }
 }
 
@@ -45,21 +45,21 @@ extension MenuItemPresenter: MenuItemPresenterRepresentable {
 extension MenuItemPresenter {
     
     func numberOfSections() -> Int {
-        0
+        return viewModel.numberOfSections
     }
     
     func numberOfItems(inSection section: Int) -> Int {
-        0
+        return viewModel.numberOfItems(inSection: section)
     }
     
-    func item(atIndexPath indexPath: IndexPath) -> MenuItemViewModel? {
-        nil
+    func item(atIndexPath indexPath: IndexPath) -> MenuItemViewModelAdapterBlock? {
+        return viewModel.blockItem(atIndexPath: indexPath)
     }
     
     func didSelectItem(atIndexPath indexPath: IndexPath) { }
     
-    func sectionTitle(forSection section: Int) -> String? {
-        return nil
+    func sectionType(forSection section: Int) -> CollectionSectionType {
+        return viewModel.blockSectionType(forSection: section)
     }
 }
 

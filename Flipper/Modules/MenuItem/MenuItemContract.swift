@@ -22,9 +22,9 @@ protocol MenuItemPresenterRepresentable: PresenterRepresentable {
     func numberOfSections() -> Int
     func numberOfItems(inSection section: Int) -> Int
     
-    func item(atIndexPath indexPath: IndexPath) -> MenuItemViewModel?
+    func item(atIndexPath indexPath: IndexPath) -> MenuItemViewModelAdapterBlock?
     func didSelectItem(atIndexPath indexPath: IndexPath)
-    func sectionTitle(forSection section: Int) -> String?
+    func sectionType(forSection section: Int) -> CollectionSectionType
 }
 
 enum MenuItemModule {
