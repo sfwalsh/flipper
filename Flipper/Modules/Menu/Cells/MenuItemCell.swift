@@ -105,6 +105,10 @@ extension MenuItemCell {
     }
     
     private func applyConstraints() {
+        priceLabel.setContentHuggingPriority(.required,
+                                             for: .horizontal)
+        priceLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+        
         NSLayoutConstraint.activate([
             
             cardView.topAnchor.constraint(equalTo: topAnchor),
@@ -127,7 +131,6 @@ extension MenuItemCell {
             priceLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                  constant: -Layout.contentInsets.right),
             priceLabel.heightAnchor.constraint(equalToConstant: Layout.priceLabelHeight),
-            priceLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: Layout.minPriceLabelWidth),
             
             titleLabel.topAnchor.constraint(equalTo: topAnchor,
                                             constant: Layout.contentInsets.top),
@@ -155,7 +158,7 @@ extension MenuItemCell {
     
     func setup(withViewModel viewModel: MenuItemViewModel) {
         priceLabel.update(withTitle: viewModel.priceLabelText)
-        titleLabel.text = viewModel.titleLabelText
+        titleLabel.text = "Beautiful long text reiongeai nireog nogan eiorgn eos"
         descriptionLabel.text = viewModel.descriptionLabelText
         applyImage(forURLString: viewModel.mainImageURLString)
     }
