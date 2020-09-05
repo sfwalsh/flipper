@@ -28,7 +28,7 @@ final class MenuItemCell: UICollectionViewCell, ReusableCell {
         static let placeholderImage: UIImage = #imageLiteral(resourceName: "empty-state-icon")
     }
     
-    private let cardView = CardView()
+    private let cardView = CardView(highlightColour: ColourPalette.gregariousGreen)
     
     private let imageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)

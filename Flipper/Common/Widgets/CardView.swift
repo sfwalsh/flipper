@@ -11,12 +11,22 @@ import UIKit
 final class CardView: UIView {
     
     private enum Layout {
+        static let selectedStrokeWidth: CGFloat = 3.0
         static let strokeWidth: CGFloat = 1.0
         static let cardCornerRadius: CGFloat = 4.0
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private let highlightColour: UIColor
+    
+    var isSelected: Bool = false {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
+    init(highlightColour: UIColor) {
+        self.highlightColour = highlightColour
+        super.init(frame: .zero)
         self.backgroundColor = .clear
     }
     
@@ -39,17 +49,29 @@ extension CardView {
     
     private func drawCard(in context: CGContext,
                           for rect: CGRect) {
-        let cardRect = rect
-        let path = UIBezierPath(roundedRect: cardRect,
-                                cornerRadius: Layout.cardCornerRadius)
-        
-        context.addPath(path.cgPath)
+        let path = calculatePath(forRect: rect)
+        context.addPath(path)
         context.setFillColor(ColourPalette.offWhite.cgColor)
         context.fillPath()
         
-        context.addPath(path.cgPath)
-        context.setLineWidth(Layout.strokeWidth)
-        context.setStrokeColor(ColourPalette.alphaBlack10.cgColor)
+        context.addPath(path)
+        
+        context.setLineWidth(calculateStrokeWidth())
+        context.setStrokeColor(calculateStrokeColour())
         context.strokePath()
+    }
+    
+    private func calculatePath(forRect rect: CGRect) -> CGPath {
+        let inset: CGPoint = isSelected ? CGPoint(x: Layout.selectedStrokeWidth, y: Layout.selectedStrokeWidth) : .zero
+        return UIBezierPath(roundedRect: rect.insetBy(dx: inset.x, dy: inset.y),
+            cornerRadius: Layout.cardCornerRadius).cgPath
+    }
+    
+    private func calculateStrokeWidth() -> CGFloat {
+        return isSelected ? Layout.selectedStrokeWidth : Layout.strokeWidth
+    }
+    
+    private func calculateStrokeColour() -> CGColor {
+        return isSelected ? highlightColour.cgColor : ColourPalette.alphaBlack10.cgColor
     }
 }

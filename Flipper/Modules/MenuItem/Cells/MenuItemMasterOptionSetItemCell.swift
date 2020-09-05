@@ -13,10 +13,14 @@ final class MenuItemMasterOptionSetItemCell: UICollectionViewCell, ReusableCell 
     static let preferredHeight: CGFloat = 80.0
     
     private enum Layout {
-        static let insets: UIEdgeInsets = UIEdgeInsets(top: 0,
+        static let contentInsets: UIEdgeInsets = UIEdgeInsets(top: 0,
                                                        left: 12,
                                                        bottom: 0,
                                                        right: 12)
+        static let internalContentInsets: UIEdgeInsets = UIEdgeInsets(top: 0,
+                                                                      left: 20,
+                                                                      bottom: 0,
+                                                                      right: 20)
         static let imageHeightMutliplier: CGFloat = 0.75
         static let priceLabelHeight: CGFloat = 26.0
     }
@@ -25,7 +29,7 @@ final class MenuItemMasterOptionSetItemCell: UICollectionViewCell, ReusableCell 
         static let placeholderImage: UIImage = #imageLiteral(resourceName: "empty-state-icon")
     }
     
-    private let cardView = CardView()
+    private let cardView = CardView(highlightColour: ColourPalette.gregariousGreen)
     
     private let titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
@@ -81,14 +85,14 @@ extension MenuItemMasterOptionSetItemCell {
         
         NSLayoutConstraint.activate([
             cardView.topAnchor.constraint(equalTo: topAnchor),
-            cardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Layout.insets.left),
+            cardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Layout.contentInsets.left),
             cardView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            cardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Layout.insets.right),
+            cardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Layout.contentInsets.right),
             
-            titleLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: Layout.insets.left),
+            titleLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: Layout.internalContentInsets.left),
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             
-            priceLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -Layout.insets.right),
+            priceLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -Layout.internalContentInsets.right),
             priceLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             priceLabel.heightAnchor.constraint(equalToConstant: Layout.priceLabelHeight)
         ])
@@ -103,5 +107,7 @@ extension MenuItemMasterOptionSetItemCell {
     func setup(titleText: String, priceText: String?) {
         titleLabel.text = titleText
         priceLabel.update(withTitle: priceText)
+        
+        cardView.isSelected = true
     }
 }
