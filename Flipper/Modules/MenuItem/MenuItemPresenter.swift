@@ -58,6 +58,8 @@ extension MenuItemPresenter {
     
     func didSelectItem(atIndexPath indexPath: IndexPath) { }
     
+    func didDeselectItem(atIndexPath indexPath: IndexPath) { }
+    
     func sectionType(forSection section: Int) -> CollectionSectionType {
         return viewModel.blockSectionType(forSection: section)
     }

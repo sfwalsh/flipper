@@ -24,6 +24,7 @@ protocol MenuItemPresenterRepresentable: PresenterRepresentable {
     
     func item(atIndexPath indexPath: IndexPath) -> MenuItemViewModelAdapterBlock?
     func didSelectItem(atIndexPath indexPath: IndexPath)
+    func didDeselectItem(atIndexPath indexPath: IndexPath)
     func sectionType(forSection section: Int) -> CollectionSectionType
 }
 

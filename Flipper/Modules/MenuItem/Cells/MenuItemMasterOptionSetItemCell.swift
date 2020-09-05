@@ -108,6 +108,11 @@ extension MenuItemMasterOptionSetItemCell {
         titleLabel.text = titleText
         priceLabel.update(withTitle: priceText)
         
-        cardView.isSelected = true
+    }
+    
+    override var isSelected: Bool {
+        didSet {
+            cardView.isSelected = isSelected
+        }
     }
 }

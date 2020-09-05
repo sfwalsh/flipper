@@ -24,6 +24,8 @@ final class MenuItemView: UIViewController, Navigatable {
         collectionView.backgroundColor = .clear
         collectionView.alwaysBounceVertical = true
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.allowsMultipleSelection = true
+        
         collectionView.register(MenuItemViewHeaderCell.self,
                                 forCellWithReuseIdentifier: MenuItemViewHeaderCell.reuseIdentifier)
         collectionView.register(MenuItemMasterOptionSetItemCell.self,
@@ -171,6 +173,11 @@ extension MenuItemView: UICollectionViewDelegate {
                         didSelectItemAt indexPath: IndexPath) {
         presenter.didSelectItem(atIndexPath: indexPath)
     }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        didDeselectItemAt indexPath: IndexPath) {
+        presenter.didDeselectItem(atIndexPath: indexPath)
+    }
 }
 
 
@@ -231,7 +238,8 @@ extension MenuItemView {
         }
     }
     
-    private func setupCell(forItem item: MenuItemViewModelAdapterBlock, atIndexPath indexPath: IndexPath) -> UICollectionViewCell? {
+    private func setupCell(forItem item: MenuItemViewModelAdapterBlock,
+                           atIndexPath indexPath: IndexPath) -> UICollectionViewCell? {
         switch item {
         case .header(let title, let description, let imageURLString):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuItemViewHeaderCell.reuseIdentifier, for: indexPath) as? MenuItemViewHeaderCell else { return nil }
