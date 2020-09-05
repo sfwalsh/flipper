@@ -158,7 +158,7 @@ extension MenuItemCell {
     
     func setup(withViewModel viewModel: MenuItemViewModel) {
         priceLabel.update(withTitle: viewModel.priceLabelText)
-        titleLabel.text = "Beautiful long text reiongeai nireog nogan eiorgn eos"
+        titleLabel.text = viewModel.titleLabelText
         descriptionLabel.text = viewModel.descriptionLabelText
         applyImage(forURLString: viewModel.mainImageURLString)
     }
