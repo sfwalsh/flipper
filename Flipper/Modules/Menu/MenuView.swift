@@ -17,7 +17,10 @@ final class MenuView: UIViewController, Navigatable {
     private enum Layout {
         static let headerHeight: CGFloat = 85.0
         static let footerHeight: CGFloat = 45.0
-        static let itemHeight: CGFloat = 120.0
+        static let sectionInsets: UIEdgeInsets = UIEdgeInsets(top: 0,
+                                                              left: 8,
+                                                              bottom: 0,
+                                                              right: 8)
     }
     
     private let presenter: MenuPresenterRepresentable
@@ -198,8 +201,8 @@ extension MenuView: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let _ = presenter.item(atIndexPath: indexPath) else { return .zero }
-        return CGSize(width: collectionView.frame.width,
-                      height: Layout.itemHeight)
+        return CGSize(width: collectionView.frame.width-(Layout.sectionInsets.left*2),
+                      height: MenuItemCell.preferredHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -212,5 +215,11 @@ extension MenuView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width,
                       height: Layout.footerHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return Layout.sectionInsets
     }
 }

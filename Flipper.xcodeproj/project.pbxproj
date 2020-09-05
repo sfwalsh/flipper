@@ -55,6 +55,7 @@
 		BFCD09E22502706500715CEE /* SectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09E12502706500715CEE /* SectionHeaderCell.swift */; };
 		BFCD09E5250272D200715CEE /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09E4250272D200715CEE /* MenuViewModel.swift */; };
 		BFCD09E7250272E200715CEE /* MenuItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09E6250272E200715CEE /* MenuItemViewModel.swift */; };
+		BFFF6A772503DDDC00F7D6D2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFF6A762503DDDC00F7D6D2 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		BFCD09E12502706500715CEE /* SectionHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderCell.swift; sourceTree = "<group>"; };
 		BFCD09E4250272D200715CEE /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		BFCD09E6250272E200715CEE /* MenuItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewModel.swift; sourceTree = "<group>"; };
+		BFFF6A762503DDDC00F7D6D2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				BFCD09E12502706500715CEE /* SectionHeaderCell.swift */,
+				BFFF6A762503DDDC00F7D6D2 /* CardView.swift */,
 				BF9A843A25027EDE005A748D /* SectionFooterCell.swift */,
 				BF9A843C250281C7005A748D /* AttributeLabel.swift */,
 			);
@@ -464,6 +467,7 @@
 				BF0D568F250155F8007CBE41 /* MenuPresenter.swift in Sources */,
 				BF06A03F2501991C00365BC2 /* Navigatable.swift in Sources */,
 				BF06A0492501A5A600365BC2 /* ReusableCell.swift in Sources */,
+				BFFF6A772503DDDC00F7D6D2 /* CardView.swift in Sources */,
 				BF0D569325015621007CBE41 /* MenuContract.swift in Sources */,
 				BFCD09E22502706500715CEE /* SectionHeaderCell.swift in Sources */,
 				BF9A843B25027EDE005A748D /* SectionFooterCell.swift in Sources */,
