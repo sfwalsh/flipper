@@ -11,9 +11,11 @@ import Foundation
 struct MenuItemViewModelAdapter {
     
     private let viewModel: MenuItemViewModel
+    private let blocks: [(CollectionSectionType, [MenuItemViewModelAdapterBlock])]
     
     init(viewModel: MenuItemViewModel) {
         self.viewModel = viewModel
+        self.blocks = MenuItemViewModelAdapter.build(for: viewModel)
     }
     
     var titleLabelText: String {
@@ -21,21 +23,31 @@ struct MenuItemViewModelAdapter {
     }
     
     var numberOfSections: Int {
-        return 1
+        return blocks.count
     }
     
     func numberOfItems(inSection section: Int) -> Int {
-        return 1
+        return blocks[safe: section]?.1.count ?? 0
     }
     
     func blockItem(atIndexPath indexPath: IndexPath) -> MenuItemViewModelAdapterBlock? {
-        return MenuItemViewModelAdapterBlock.header(title: viewModel.titleLabelText,
-                                                    description: viewModel.descriptionLabelText,
-                                                    imageURLString: viewModel.mainImageURLString)
+        return blocks[safe: indexPath.section]?.1[safe: indexPath.item]
     }
     
     func blockSectionType(forSection section: Int) -> CollectionSectionType {
-        return .hidden
+        return blocks[safe: section]?.0 ?? .hidden
+    }
+}
+
+extension MenuItemViewModelAdapter {
+    
+    private static func build(for viewModel: MenuItemViewModel) -> [(CollectionSectionType, [MenuItemViewModelAdapterBlock])] {
+        let headerItem = MenuItemViewModelAdapterBlock.header(title: viewModel.titleLabelText,
+                                                              description: viewModel.descriptionLabelText,
+                                                              imageURLString: viewModel.mainImageURLString)
+        return [
+            (.hidden, [headerItem])
+        ]
     }
 }
 
