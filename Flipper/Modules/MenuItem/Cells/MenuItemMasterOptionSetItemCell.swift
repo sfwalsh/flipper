@@ -18,6 +18,7 @@ final class MenuItemMasterOptionSetItemCell: UICollectionViewCell, ReusableCell 
                                                        bottom: 0,
                                                        right: 12)
         static let imageHeightMutliplier: CGFloat = 0.75
+        static let priceLabelHeight: CGFloat = 26.0
     }
     
     private enum Style {
@@ -74,11 +75,33 @@ extension MenuItemMasterOptionSetItemCell {
     
     private func applyConstraints() {
         
+        priceLabel.setContentHuggingPriority(.required,
+                                             for: .horizontal)
+        priceLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+        
         NSLayoutConstraint.activate([
             cardView.topAnchor.constraint(equalTo: topAnchor),
             cardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Layout.insets.left),
             cardView.bottomAnchor.constraint(equalTo: bottomAnchor),
             cardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Layout.insets.right),
+            
+            titleLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: Layout.insets.left),
+            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            priceLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -Layout.insets.right),
+            priceLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            priceLabel.heightAnchor.constraint(equalToConstant: Layout.priceLabelHeight)
         ])
+    }
+}
+
+
+// MARK: Actions
+
+extension MenuItemMasterOptionSetItemCell {
+    
+    func setup(titleText: String, priceText: String?) {
+        titleLabel.text = titleText
+        priceLabel.update(withTitle: priceText)
     }
 }

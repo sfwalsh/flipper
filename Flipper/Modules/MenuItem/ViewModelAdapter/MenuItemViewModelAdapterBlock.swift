@@ -10,5 +10,5 @@ import Foundation
 
 enum MenuItemViewModelAdapterBlock {
     case header(title: String, description: String?, imageURLString: String?)
-    case masterOptionSetItem
+    case masterOptionSetItem(title: String, price: String?)
 }

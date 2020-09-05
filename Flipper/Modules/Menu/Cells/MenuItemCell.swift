@@ -18,12 +18,10 @@ final class MenuItemCell: UICollectionViewCell, ReusableCell {
     static let preferredHeight: CGFloat = 120.0
     
     private enum Layout {
-        
         static let contentInsets = UIEdgeInsets(top: 13, left: 13, bottom: 13, right: 13)
         static let internalContentInsets = UIEdgeInsets(top: 10, left: 13, bottom: 13, right: 13)
 
         static let priceLabelHeight: CGFloat = 26.0
-        static let minPriceLabelWidth: CGFloat = 70.0
     }
     
     private enum Style {

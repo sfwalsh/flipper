@@ -69,7 +69,11 @@ extension MenuItemViewModelAdapter {
         
         return (
             .text(title: NSLocalizedString("CHOOSE_AN_OPTION", comment: "")),
-            optionSet.items.map({ _ in return MenuItemViewModelAdapterBlock.masterOptionSetItem })
+            optionSet.items.map({ item in
+                return MenuItemViewModelAdapterBlock.masterOptionSetItem(title: item.name,
+                                                                         price: PriceFormatter.format(value: item.price))
+            })
         )
     }
 }
+
