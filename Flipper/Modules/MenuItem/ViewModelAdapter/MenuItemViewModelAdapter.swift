@@ -39,18 +39,37 @@ struct MenuItemViewModelAdapter {
     }
 }
 
+// MARK: Builder function
+
 extension MenuItemViewModelAdapter {
     
+    // NOTE: Could be simplified if it is certain there is only one master set
+    
     private static func build(for viewModel: MenuItemViewModel) -> [(CollectionSectionType, [MenuItemViewModelAdapterBlock])] {
+        
+        
         let headerItem = MenuItemViewModelAdapterBlock.header(title: viewModel.titleLabelText,
                                                               description: viewModel.descriptionLabelText,
                                                               imageURLString: viewModel.mainImageURLString)
-        return [
-            (.hidden, [headerItem])
-        ]
+        
+        return [(.hidden, [headerItem])]
+            + buildAllMasterOptionSetBlocks(for: viewModel.masterOptionSets)
     }
 }
 
-enum MenuItemViewModelAdapterBlock {
-    case header(title: String, description: String?, imageURLString: String?)
+// MARK: Master Option Set Builder functions
+
+extension MenuItemViewModelAdapter {
+    
+    private static func buildAllMasterOptionSetBlocks(for optionSets: [MenuItemOptionSet]) -> [(CollectionSectionType, [MenuItemViewModelAdapterBlock])] {
+        return optionSets.map( { buildMasterOptionSetBlock(for: $0)} )
+    }
+    
+    private static func buildMasterOptionSetBlock(for optionSet: MenuItemOptionSet) -> (CollectionSectionType, [MenuItemViewModelAdapterBlock]) {
+        
+        return (
+            .text(title: NSLocalizedString("CHOOSE_AN_OPTION", comment: "")),
+            optionSet.items.map({ _ in return MenuItemViewModelAdapterBlock.masterOptionSetItem })
+        )
+    }
 }

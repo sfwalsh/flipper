@@ -26,6 +26,8 @@ final class MenuItemView: UIViewController, Navigatable {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.register(MenuItemViewHeaderCell.self,
                                 forCellWithReuseIdentifier: MenuItemViewHeaderCell.reuseIdentifier)
+        collectionView.register(MenuItemMasterOptionSetItemCell.self,
+                                forCellWithReuseIdentifier: MenuItemMasterOptionSetItemCell.reuseIdentifier)
         collectionView.register(SectionHeaderCell.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: SectionHeaderCell.reuseIdentifier)
@@ -203,8 +205,15 @@ extension MenuItemView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width,
-                      height: Layout.footerHeight)
+        let sectionInfo = presenter.sectionType(forSection: section)
+        
+        switch sectionInfo {
+        case .text:
+            return CGSize(width: collectionView.frame.width,
+                          height: Layout.footerHeight)
+        case .hidden:
+            return .zero
+        }
     }
 }
 
@@ -217,6 +226,8 @@ extension MenuItemView {
         switch item {
         case .header:
             return MenuItemViewHeaderCell.preferredHeight
+        case .masterOptionSetItem:
+            return MenuItemMasterOptionSetItemCell.preferredHeight
         }
     }
     
@@ -226,6 +237,10 @@ extension MenuItemView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuItemViewHeaderCell.reuseIdentifier, for: indexPath) as? MenuItemViewHeaderCell else { return nil }
             
             cell.setup(title: title, description: description, imageURLString: imageURLString)
+            return cell
+        case .masterOptionSetItem:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuItemMasterOptionSetItemCell.reuseIdentifier, for: indexPath) as? MenuItemMasterOptionSetItemCell else { return nil }
+            
             return cell
         }
     }

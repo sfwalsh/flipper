@@ -32,6 +32,10 @@ struct MenuItemViewModel {
         return calculatePrice()
     }
     
+    var masterOptionSets: [MenuItemOptionSet] {
+        return menuSectionItem.optionSets.filter({ $0.isMasterOptionSet })
+    }
+    
     init(withMenuItem menuItem: MenuSectionItem) {
         self.menuSectionItem = menuItem
     }
