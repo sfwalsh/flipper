@@ -11,11 +11,13 @@ import Foundation
 @testable import Flipper
 
 final class MockMenuRouter: MenuRouterRepresentable {
+
     
     var view: Navigatable?
     
     struct DidCall {
         var attachView: Bool = false
+        var routeToDetail: Bool = false
     }
     
     struct DidUpdate {
@@ -38,4 +40,8 @@ final class MockMenuRouter: MenuRouterRepresentable {
     func attachView(view: Navigatable) {
         self.didCall.attachView = true
      }
+    
+    func routeToDetail(withViewModel viewModel: MenuItemViewModel) {
+        self.didCall.routeToDetail = true
+    }
 }

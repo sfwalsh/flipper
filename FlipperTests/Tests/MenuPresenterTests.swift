@@ -99,4 +99,14 @@ class MenuPresenterTests: XCTestCase {
             XCTAssert(self.router.didUpdate.alertMessage(to: networkError.localizedDescription), "alert was presented with relevant error")
         }
     }
+    
+    func testSelectItem() {
+        let result: NetworkResult<Menu, MenuFetchError> = .success(value: Menu.createDummy())
+        createNewSetup(withInteractor: MockMenuInteractor(withResult: result))
+        
+        sut.didSelectItem(atIndexPath: IndexPath(item: 0, section: 0))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            XCTAssert(self.router.didCall.routeToDetail, "sut alerted router to navigate to detail view")
+        }
+    }
 }
