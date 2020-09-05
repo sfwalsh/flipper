@@ -10,22 +10,42 @@ import Foundation
 
 struct PriceFormatter {
     
-    static func format(value: Double?, isMinPrice: Bool = false) -> String {
+    enum FormatOption {
+        case minValue
+        case additional
+        case standard
+    }
+    
+    private static func createNumberFormatter(forLocale locale: Locale) -> NumberFormatter {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .currency
+        numberFormatter.locale = locale
+        
+        numberFormatter.currencyCode = locale.currencyCode
+        
+        return numberFormatter
+    }
+    
+    static func format(value: Double?, formatOption :FormatOption = .standard) -> String {
         guard let value = value else {
             return NSLocalizedString("NO_PRICE", comment: "")
         }
-        
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .currency
-        numberFormatter.locale = NSLocale.current
-        
-        numberFormatter.currencyCode = NSLocale.current.currencyCode
-        
+
+        let numberFormatter = createNumberFormatter(forLocale: Locale.current)
 
         let priceString = numberFormatter.string(from: NSNumber(value: value))
         
-        if let priceString = priceString, isMinPrice {
-            return NSLocalizedString("FROM_PRICE_PREFIX", comment: "") + priceString
+        switch formatOption {
+        case .minValue:
+            if let priceString = priceString {
+                return NSLocalizedString("FROM_PRICE_PREFIX", comment: "") + priceString
+            }
+        case .additional:
+            if let priceString = priceString {
+                return NSLocalizedString("ADDITIONAL_PRICE_PREFIX", comment: "") + priceString
+            }
+        case .standard:
+            break
         }
         
         return priceString ?? NSLocalizedString("NO_PRICE", comment: "")

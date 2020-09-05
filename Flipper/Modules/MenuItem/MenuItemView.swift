@@ -233,7 +233,7 @@ extension MenuItemView {
         switch item {
         case .header:
             return MenuItemViewHeaderCell.preferredHeight
-        case .masterOptionSetItem:
+        case .masterOptionSetItem, .optionSetItem:
             return MenuItemMasterOptionSetItemCell.preferredHeight
         }
     }
@@ -246,7 +246,7 @@ extension MenuItemView {
             
             cell.setup(title: title, description: description, imageURLString: imageURLString)
             return cell
-        case .masterOptionSetItem(let title, let price):
+        case .masterOptionSetItem(let title, let price), .optionSetItem(let title, let price):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuItemMasterOptionSetItemCell.reuseIdentifier, for: indexPath) as? MenuItemMasterOptionSetItemCell else { return nil }
             
             cell.setup(titleText: title, priceText: price)

@@ -53,7 +53,12 @@ extension MenuItemViewModelAdapter {
                                                               imageURLString: viewModel.mainImageURLString)
         
         return [(.hidden, [headerItem])]
-            + buildAllMasterOptionSetBlocks(for: viewModel.masterOptionSets)
+            + buildAllOptionSetBlocks(for: viewModel.masterOptionSets,
+                                      sectionTitle: NSLocalizedString("CHOOSE_AN_OPTION", comment: ""),
+                                      transformer: buildMasterOptionSetItem(optionSet:))
+            + buildAllOptionSetBlocks(for: viewModel.regularOptionSets,
+                                      sectionTitle: NSLocalizedString("SELECT_EXTRAS", comment: ""),
+                                      transformer: buildRegularOptionSetItem(optionSet:))
     }
 }
 
@@ -61,19 +66,35 @@ extension MenuItemViewModelAdapter {
 
 extension MenuItemViewModelAdapter {
     
-    private static func buildAllMasterOptionSetBlocks(for optionSets: [MenuItemOptionSet]) -> [(CollectionSectionType, [MenuItemViewModelAdapterBlock])] {
-        return optionSets.map( { buildMasterOptionSetBlock(for: $0)} )
+    private static func buildAllOptionSetBlocks(for optionSets: [MenuItemOptionSet],
+                                                sectionTitle: String,
+                                                transformer: ((MenuItemOptionSetItem) -> MenuItemViewModelAdapterBlock)) -> [(CollectionSectionType, [MenuItemViewModelAdapterBlock])] {
+        return optionSets.map( { buildOptionSetSection(for: $0, sectionTitle: sectionTitle,
+                                                           transformer: transformer)} )
     }
     
-    private static func buildMasterOptionSetBlock(for optionSet: MenuItemOptionSet) -> (CollectionSectionType, [MenuItemViewModelAdapterBlock]) {
+    private static func buildOptionSetSection(for optionSet: MenuItemOptionSet,
+                                              sectionTitle: String,
+                                              transformer: ((MenuItemOptionSetItem) -> MenuItemViewModelAdapterBlock)) -> (CollectionSectionType, [MenuItemViewModelAdapterBlock]) {
         
         return (
-            .text(title: NSLocalizedString("CHOOSE_AN_OPTION", comment: "")),
+            .text(title: sectionTitle),
             optionSet.items.map({ item in
-                return MenuItemViewModelAdapterBlock.masterOptionSetItem(title: item.name,
-                                                                         price: PriceFormatter.format(value: item.price))
+                return transformer(item)
             })
         )
+    }
+    
+    private static func buildMasterOptionSetItem(optionSet: MenuItemOptionSetItem) -> MenuItemViewModelAdapterBlock {
+        let formattedPrice = PriceFormatter.format(value: optionSet.price, formatOption: .standard)
+        return MenuItemViewModelAdapterBlock.masterOptionSetItem(title: optionSet.name,
+                                                                 price: formattedPrice)
+    }
+    
+    private static func buildRegularOptionSetItem(optionSet: MenuItemOptionSetItem) -> MenuItemViewModelAdapterBlock {
+        let formattedPrice = PriceFormatter.format(value: optionSet.price, formatOption: .additional)
+        return MenuItemViewModelAdapterBlock.masterOptionSetItem(title: optionSet.name,
+                                                                 price: formattedPrice)
     }
 }
 

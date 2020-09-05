@@ -36,6 +36,10 @@ struct MenuItemViewModel {
         return menuSectionItem.optionSets.filter({ $0.isMasterOptionSet })
     }
     
+    var regularOptionSets: [MenuItemOptionSet] {
+        return menuSectionItem.optionSets.filter({ !$0.isMasterOptionSet })
+    }
+    
     init(withMenuItem menuItem: MenuSectionItem) {
         self.menuSectionItem = menuItem
     }
@@ -52,9 +56,9 @@ extension MenuItemViewModel {
             .flatMap({ $0.items })
         if masterOptionSetItems.count > 0 {
             let cheapestOption = masterOptionSetItems.compactMap({ $0.price }).min(by: { $0 < $1 })
-            return PriceFormatter.format(value: cheapestOption, isMinPrice: true)
+            return PriceFormatter.format(value: cheapestOption, formatOption: .minValue)
         } else {
-            return PriceFormatter.format(value: menuSectionItem.price, isMinPrice: false)
+            return PriceFormatter.format(value: menuSectionItem.price, formatOption: .standard)
         }
     }
 }

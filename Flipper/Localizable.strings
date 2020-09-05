@@ -17,4 +17,6 @@
 
 "NO_PRICE" = "No Price";
 "FROM_PRICE_PREFIX" = "From ";
+"ADDITIONAL_PRICE_PREFIX" = "+ ";
 "CHOOSE_AN_OPTION" = "Choose an option";
+"SELECT_EXTRAS" = "Select Extras";
