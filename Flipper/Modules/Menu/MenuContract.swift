@@ -38,7 +38,19 @@ protocol MenuInteractorRepresentable {
 }
 
 protocol MenuRouterRepresentable: Router {
+    func routeToDetail(withViewModel viewModel: MenuItemViewModel)
+    
     func presentAlert(withTitle title: String,
                          message: String,
                          options: [(String, (() -> Void))])
+}
+
+enum MenuModule {
+    
+    static func createInstance() -> MenuView {
+        let interactor = MenuInteractor()
+        let router = MenuRouter()
+        let presenter = MenuPresenter(interactor: interactor, router: router)
+        return MenuView(presenter: presenter)
+    }
 }

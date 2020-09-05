@@ -67,7 +67,10 @@ extension MenuPresenter {
         return menuViewModel?.menuItem(atIndexPath: indexPath)
     }
     
-    func didSelectItem(atIndexPath indexPath: IndexPath) { }
+    func didSelectItem(atIndexPath indexPath: IndexPath) {
+        guard let viewModel = menuViewModel?.menuItem(atIndexPath: indexPath) else { return }
+        router.routeToDetail(withViewModel: viewModel)
+    }
     
     func sectionTitle(forSection section: Int) -> String? {
         return menuViewModel?.menuSectionTitle(forIndex: section)

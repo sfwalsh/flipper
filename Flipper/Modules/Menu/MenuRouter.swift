@@ -16,9 +16,10 @@ final class MenuRouter: MenuRouterRepresentable {
 
     internal weak var view: Navigatable?
     
-    /*
-     In a real app, the routing logic to other views could go here
-     */
+    func routeToDetail(withViewModel viewModel: MenuItemViewModel) {
+        let menuItemView = MenuItemModule.createInstance(withViewModel: viewModel)
+        view?.navigationController?.pushViewController(menuItemView, animated: true)
+    }
 }
 
 // MARK: AlertPresentable Implementation

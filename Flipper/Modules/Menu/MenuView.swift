@@ -178,11 +178,19 @@ extension MenuView: UICollectionViewDataSource {
     }
 }
 
+
 // MARK: UICollectionViewDelegate Implementation
 
 extension MenuView: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        presenter.didSelectItem(atIndexPath: indexPath)
+    }
 }
+
+
+// MARK: UICollectionViewDelegateFlowLayout Implementation
 
 extension MenuView: UICollectionViewDelegateFlowLayout {
     

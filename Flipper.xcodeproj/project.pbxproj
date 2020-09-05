@@ -39,6 +39,9 @@
 		BF9A843F25028EBE005A748D /* PriceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A843E25028EBE005A748D /* PriceFormatter.swift */; };
 		BF9A84432502A0F0005A748D /* MenuSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A84422502A0F0005A748D /* MenuSectionViewModel.swift */; };
 		BF9A84462502B0E9005A748D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = BF9A84452502B0E9005A748D /* SDWebImage */; };
+		BF9A84482503144C005A748D /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A84472503144C005A748D /* MenuItemView.swift */; };
+		BF9A844B25031474005A748D /* MenuItemContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A844A25031474005A748D /* MenuItemContract.swift */; };
+		BF9A844D2503147E005A748D /* MenuItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A844C2503147E005A748D /* MenuItemPresenter.swift */; };
 		BFCD09D22502549800715CEE /* MockMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09D12502549800715CEE /* MockMenuView.swift */; };
 		BFCD09D4250254A500715CEE /* MockMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09D3250254A500715CEE /* MockMenuRouter.swift */; };
 		BFCD09D6250254B200715CEE /* MockMenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD09D5250254B200715CEE /* MockMenuInteractor.swift */; };
@@ -98,6 +101,9 @@
 		BF9A843C250281C7005A748D /* AttributeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeLabel.swift; sourceTree = "<group>"; };
 		BF9A843E25028EBE005A748D /* PriceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFormatter.swift; sourceTree = "<group>"; };
 		BF9A84422502A0F0005A748D /* MenuSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSectionViewModel.swift; sourceTree = "<group>"; };
+		BF9A84472503144C005A748D /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		BF9A844A25031474005A748D /* MenuItemContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemContract.swift; sourceTree = "<group>"; };
+		BF9A844C2503147E005A748D /* MenuItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemPresenter.swift; sourceTree = "<group>"; };
 		BFCD09D12502549800715CEE /* MockMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMenuView.swift; sourceTree = "<group>"; };
 		BFCD09D3250254A500715CEE /* MockMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMenuRouter.swift; sourceTree = "<group>"; };
 		BFCD09D5250254B200715CEE /* MockMenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMenuInteractor.swift; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				BF0D568D250155E5007CBE41 /* Menu */,
+				BF9A844925031454005A748D /* MenuItem */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -253,6 +260,16 @@
 				BF2F058B2501547B006B44CC /* Info.plist */,
 			);
 			path = FlipperTests;
+			sourceTree = "<group>";
+		};
+		BF9A844925031454005A748D /* MenuItem */ = {
+			isa = PBXGroup;
+			children = (
+				BF9A84472503144C005A748D /* MenuItemView.swift */,
+				BF9A844C2503147E005A748D /* MenuItemPresenter.swift */,
+				BF9A844A25031474005A748D /* MenuItemContract.swift */,
+			);
+			path = MenuItem;
 			sourceTree = "<group>";
 		};
 		BFCD09D02502548700715CEE /* Tests */ = {
@@ -430,8 +447,11 @@
 				BF06A043250199E800365BC2 /* MenuRouter.swift in Sources */,
 				BF0D56D2250175BC007CBE41 /* Menu.swift in Sources */,
 				BF06A03C2501970500365BC2 /* AlertPresentable.swift in Sources */,
+				BF9A844D2503147E005A748D /* MenuItemPresenter.swift in Sources */,
 				BF0D56D025017211007CBE41 /* MenuSectionAvailibility.swift in Sources */,
 				BF9A843F25028EBE005A748D /* PriceFormatter.swift in Sources */,
+				BF9A84482503144C005A748D /* MenuItemView.swift in Sources */,
+				BF9A844B25031474005A748D /* MenuItemContract.swift in Sources */,
 				BFCD09DA25026CFE00715CEE /* FontMachine.swift in Sources */,
 				BF0D56C725016725007CBE41 /* MenuSectionItem.swift in Sources */,
 				BF0D56D625017907007CBE41 /* MenuFetchError.swift in Sources */,

@@ -66,13 +66,9 @@ private extension SceneDelegate {
     private func createInitialViewController() -> UIViewController {
         
         // Initial view could be switched out here based on login state, etc.
-        
-        let interactor = MenuInteractor()
-        let router = MenuRouter()
-        let presenter = MenuPresenter(interactor: interactor, router: router)
-        let view = MenuView(presenter: presenter)
+        let view = MenuModule.createInstance()
         let navigationController = UINavigationController(rootViewController: view)
-        
+    
         return navigationController
     }
 }
